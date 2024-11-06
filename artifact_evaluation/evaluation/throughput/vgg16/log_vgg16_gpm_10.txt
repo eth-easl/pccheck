@@ -1,0 +1,920 @@
+At create1, file name is checkpoint_gpm, elements is 32
+Call gpm_map_file, with total_size 1106881280, size is 553434368
+SET FILE TO SIZE 1106881280
+File mapped, at address 0x7f38b4065000, fd is 50
+------------------ Call cudaHostRegister with size  is 1106881280
+------------------ ret is 0
+Set size to 553434368
+0x7f38b4067000, 0x7f38d5033000
+Size is 553434368
+Size is 553434368
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 610.410732 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1133.000000 ms, Map time: 436.000000 ms, Checkpoint time: 697.000000 ms
+Checkpoint took 1133971 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 622.420993 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 999.000000 ms, Map time: 325.000000 ms, Checkpoint time: 674.000000 ms
+Checkpoint took 999260 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 855.587252 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1231.000000 ms, Map time: 325.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1231554 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 841.655008 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1217.000000 ms, Map time: 325.000000 ms, Checkpoint time: 892.000000 ms
+Checkpoint took 1217729 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 854.858587 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1231.000000 ms, Map time: 325.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1231222 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 841.236130 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1217.000000 ms, Map time: 325.000000 ms, Checkpoint time: 892.000000 ms
+Checkpoint took 1217794 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 855.317876 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1232.000000 ms, Map time: 326.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1232507 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 840.617846 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1217.000000 ms, Map time: 326.000000 ms, Checkpoint time: 891.000000 ms
+Checkpoint took 1217652 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 855.459832 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1232.000000 ms, Map time: 326.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1232670 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 840.776198 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1216.000000 ms, Map time: 324.000000 ms, Checkpoint time: 892.000000 ms
+Checkpoint took 1216143 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 853.993525 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1230.000000 ms, Map time: 325.000000 ms, Checkpoint time: 905.000000 ms
+Checkpoint took 1230108 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.173312 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1212.000000 ms, Map time: 325.000000 ms, Checkpoint time: 887.000000 ms
+Checkpoint took 1212489 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 852.613185 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1228.000000 ms, Map time: 325.000000 ms, Checkpoint time: 903.000000 ms
+Checkpoint took 1228423 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.388909 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1212.000000 ms, Map time: 325.000000 ms, Checkpoint time: 887.000000 ms
+Checkpoint took 1212852 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 852.200583 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1228.000000 ms, Map time: 325.000000 ms, Checkpoint time: 903.000000 ms
+Checkpoint took 1228625 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.139235 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1212.000000 ms, Map time: 325.000000 ms, Checkpoint time: 887.000000 ms
+Checkpoint took 1212310 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 853.289768 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1228.000000 ms, Map time: 324.000000 ms, Checkpoint time: 904.000000 ms
+Checkpoint took 1228726 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 831.771828 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1207.000000 ms, Map time: 325.000000 ms, Checkpoint time: 882.000000 ms
+Checkpoint took 1208053 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 853.055295 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1229.000000 ms, Map time: 326.000000 ms, Checkpoint time: 903.000000 ms
+Checkpoint took 1229819 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.179593 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1211.000000 ms, Map time: 325.000000 ms, Checkpoint time: 886.000000 ms
+Checkpoint took 1211983 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 852.965923 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1229.000000 ms, Map time: 326.000000 ms, Checkpoint time: 903.000000 ms
+Checkpoint took 1229994 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.869252 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1211.000000 ms, Map time: 323.000000 ms, Checkpoint time: 888.000000 ms
+Checkpoint took 1211458 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 853.336219 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1228.000000 ms, Map time: 324.000000 ms, Checkpoint time: 904.000000 ms
+Checkpoint took 1228963 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.251424 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1211.000000 ms, Map time: 324.000000 ms, Checkpoint time: 887.000000 ms
+Checkpoint took 1211165 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 853.240559 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1229.000000 ms, Map time: 325.000000 ms, Checkpoint time: 904.000000 ms
+Checkpoint took 1229470 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.444685 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1211.000000 ms, Map time: 324.000000 ms, Checkpoint time: 887.000000 ms
+Checkpoint took 1211868 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 852.691068 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1228.000000 ms, Map time: 325.000000 ms, Checkpoint time: 903.000000 ms
+Checkpoint took 1228547 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.133157 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1211.000000 ms, Map time: 324.000000 ms, Checkpoint time: 887.000000 ms
+Checkpoint took 1211244 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 852.643485 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1229.000000 ms, Map time: 326.000000 ms, Checkpoint time: 903.000000 ms
+Checkpoint took 1229926 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 840.713136 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1216.000000 ms, Map time: 324.000000 ms, Checkpoint time: 892.000000 ms
+Checkpoint took 1216199 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 855.598956 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1232.000000 ms, Map time: 326.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1232633 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.029595 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1211.000000 ms, Map time: 324.000000 ms, Checkpoint time: 887.000000 ms
+Checkpoint took 1211618 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 853.165634 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1229.000000 ms, Map time: 325.000000 ms, Checkpoint time: 904.000000 ms
+Checkpoint took 1229067 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 836.088812 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1211.000000 ms, Map time: 324.000000 ms, Checkpoint time: 887.000000 ms
+Checkpoint took 1211491 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 688.697370 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1064.000000 ms, Map time: 324.000000 ms, Checkpoint time: 740.000000 ms
+Checkpoint took 1064665 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 840.489693 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1214.000000 ms, Map time: 323.000000 ms, Checkpoint time: 891.000000 ms
+Checkpoint took 1214303 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 854.754143 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1229.000000 ms, Map Process with pid 1867, args is Namespace(arch='vgg16', batchsize=32, train_dir='', dataset='imagenet', cfreq=10, bench_total_steps=500, checkpoint_format='./checkpoint-{epoch}-{it}.chk', path_to_pmem='')
+Configure dataset
+total size is 553430176
+totalsize is c_ulong(553430176), 32 tensors
+Start epoch:  0
+Iter 0
+Iter 1
+Iter 2
+Iter 3
+CHECKPOINT TOOK 1.167978048324585
+Current checkpoint time median is: 1.1679742336273193
+Start clock!
+Iter 4
+Iter 5
+Iter 6
+Iter 7
+Iter 8
+Iter 9
+Iter 10
+Iter 11
+Iter 12
+Iter 13
+CHECKPOINT TOOK 1.054154634475708
+Current checkpoint time median is: 1.0541505813598633
+Iter 14
+Iter 15
+Iter 16
+Iter 17
+Iter 18
+Iter 19
+Iter 20
+Iter 21
+Iter 22
+Iter 23
+CHECKPOINT TOOK 1.286238193511963
+Current checkpoint time median is: 1.2862343788146973
+Iter 24
+Iter 25
+Iter 26
+Iter 27
+Iter 28
+Iter 29
+Iter 30
+Iter 31
+Iter 32
+Iter 33
+CHECKPOINT TOOK 1.27262544631958
+Current checkpoint time median is: 1.2726213932037354
+Iter 34
+Iter 35
+Iter 36
+Iter 37
+Iter 38
+Iter 39
+Iter 40
+Iter 41
+Iter 42
+Iter 43
+CHECKPOINT TOOK 1.2858195304870605
+Current checkpoint time median is: 1.285815715789795
+Iter 44
+Iter 45
+Iter 46
+Iter 47
+Iter 48
+Iter 49
+Iter 50
+Iter 51
+Iter 52
+Iter 53
+CHECKPOINT TOOK 1.2726845741271973
+Current checkpoint time median is: 1.272681474685669
+Iter 54
+Iter 55
+Iter 56
+Iter 57
+Iter 58
+Iter 59
+Iter 60
+Iter 61
+Iter 62
+Iter 63
+CHECKPOINT TOOK 1.2870900630950928
+Current checkpoint time median is: 1.2870864868164062
+Iter 64
+Iter 65
+Iter 66
+Iter 67
+Iter 68
+Iter 69
+Iter 70
+Iter 71
+Iter 72
+Iter 73
+CHECKPOINT TOOK 1.272385835647583
+Current checkpoint time median is: 1.2723817825317383
+Iter 74
+Iter 75
+Iter 76
+Iter 77
+Iter 78
+Iter 79
+Iter 80
+Iter 81
+Iter 82
+Iter 83
+CHECKPOINT TOOK 1.2870028018951416
+Current checkpoint time median is: 1.2869985103607178
+Iter 84
+Iter 85
+Iter 86
+Iter 87
+Iter 88
+Iter 89
+Iter 90
+Iter 91
+Iter 92
+Iter 93
+CHECKPOINT TOOK 1.2703886032104492
+Current checkpoint time median is: 1.2703850269317627
+Iter 94
+Iter 95
+Iter 96
+Iter 97
+Iter 98
+Iter 99
+Iter 100
+Iter 101
+Iter 102
+Iter 103
+CHECKPOINT TOOK 1.284749984741211
+Current checkpoint time median is: 1.2847464084625244
+Iter 104
+Iter 105
+Iter 106
+Iter 107
+Iter 108
+Iter 109
+Iter 110
+Iter 111
+Iter 112
+Iter 113
+CHECKPOINT TOOK 1.2672119140625
+Current checkpoint time median is: 1.2672078609466553
+Iter 114
+Iter 115
+Iter 116
+Iter 117
+Iter 118
+Iter 119
+Iter 120
+Iter 121
+Iter 122
+Iter 123
+CHECKPOINT TOOK 1.2823500633239746
+Current checkpoint time median is: 1.282346248626709
+Iter 124
+Iter 125
+Iter 126
+Iter 127
+Iter 128
+Iter 129
+Iter 130
+Iter 131
+Iter 132
+Iter 133
+CHECKPOINT TOOK 1.2674238681793213
+Current checkpoint time median is: 1.2674200534820557
+Iter 134
+Iter 135
+Iter 136
+Iter 137
+Iter 138
+Iter 139
+Iter 140
+Iter 141
+Iter 142
+Iter 143
+CHECKPOINT TOOK 1.2833952903747559
+Current checkpoint time median is: 1.2833914756774902
+Iter 144
+Iter 145
+Iter 146
+Iter 147
+Iter 148
+Iter 149
+Iter 150
+Iter 151
+Iter 152
+Iter 153
+CHECKPOINT TOOK 1.2669782638549805
+Current checkpoint time median is: 1.2669742107391357
+Iter 154
+Iter 155
+Iter 156
+Iter 157
+Iter 158
+Iter 159
+Iter 160
+Iter 161
+Iter 162
+Iter 163
+CHECKPOINT TOOK 1.2830440998077393
+Current checkpoint time median is: 1.2830398082733154
+Iter 164
+Iter 165
+Iter 166
+Iter 167
+Iter 168
+Iter 169
+Iter 170
+Iter 171
+Iter 172
+Iter 173
+CHECKPOINT TOOK 1.262727975845337
+Current checkpoint time median is: 1.2627246379852295
+Iter 174
+Iter 175
+Iter 176
+Iter 177
+Iter 178
+Iter 179
+Iter 180
+Iter 181
+Iter 182
+Iter 183
+CHECKPOINT TOOK 1.2845168113708496
+Current checkpoint time median is: 1.2845127582550049
+Iter 184
+Iter 185
+Iter 186
+Iter 187
+Iter 188
+Iter 189
+Iter 190
+Iter 191
+Iter 192
+Iter 193
+CHECKPOINT TOOK 1.2667672634124756
+Current checkpoint time median is: 1.2667632102966309
+Iter 194
+Iter 195
+Iter 196
+Iter 197
+Iter 198
+Iter 199
+Iter 200
+Iter 201
+Iter 202
+Iter 203
+CHECKPOINT TOOK 1.284747838973999
+Current checkpoint time median is: 1.2847435474395752
+Iter 204
+Iter 205
+Iter 206
+Iter 207
+Iter 208
+Iter 209
+Iter 210
+Iter 211
+Iter 212
+Iter 213
+CHECKPOINT TOOK 1.2660267353057861
+Current checkpoint time median is: 1.2660231590270996
+Iter 214
+Iter 215
+Iter 216
+Iter 217
+Iter 218
+Iter 219
+Iter 220
+Iter 221
+Iter 222
+Iter 223
+CHECKPOINT TOOK 1.2835369110107422
+Current checkpoint time median is: 1.2835335731506348
+Iter 224
+Iter 225
+Iter 226
+Iter 227
+Iter 228
+Iter 229
+Iter 230
+Iter 231
+Iter 232
+Iter 233
+CHECKPOINT TOOK 1.2656114101409912
+Current checkpoint time median is: 1.2656075954437256
+Iter 234
+Iter 235
+Iter 236
+Iter 237
+Iter 238
+Iter 239
+Iter 240
+Iter 241
+Iter 242
+Iter 243
+CHECKPOINT TOOK 1.2842583656311035
+Current checkpoint time median is: 1.2842540740966797
+Iter 244
+Iter 245
+Iter 246
+Iter 247
+Iter 248
+Iter 249
+Iter 250
+Iter 251
+Iter 252
+Iter 253
+CHECKPOINT TOOK 1.2665324211120605
+Current checkpoint time median is: 1.266528844833374
+Iter 254
+Iter 255
+Iter 256
+Iter 257
+Iter 258
+Iter 259
+Iter 260
+Iter 261
+Iter 262
+Iter 263
+CHECKPOINT TOOK 1.2828044891357422
+Current checkpoint time median is: 1.2828006744384766
+Iter 264
+Iter 265
+Iter 266
+Iter 267
+Iter 268
+Iter 269
+Iter 270
+Iter 271
+Iter 272
+Iter 273
+CHECKPOINT TOOK 1.2660579681396484
+Current checkpoint time median is: 1.2660539150238037
+Iter 274
+Iter 275
+Iter 276
+Iter 277
+Iter 278
+Iter 279
+Iter 280
+Iter 281
+Iter 282
+Iter 283
+CHECKPOINT TOOK 1.2847225666046143
+Current checkpoint time median is: 1.2847189903259277
+Iter 284
+Iter 285
+Iter 286
+Iter 287
+Iter 288
+Iter 289
+Iter 290
+Iter 291
+Iter 292
+Iter 293
+CHECKPOINT TOOK 1.27085280418396
+Current checkpoint time median is: 1.2708497047424316
+Iter 294
+Iter 295
+Iter 296
+Iter 297
+Iter 298
+Iter 299
+Iter 300
+Iter 301
+Iter 302
+Iter 303
+CHECKPOINT TOOK 1.2871663570404053
+Current checkpoint time median is: 1.2871627807617188
+Iter 304
+Iter 305
+Iter 306
+Iter 307
+Iter 308
+Iter 309
+Iter 310
+Iter 311
+Iter 312
+Iter 313
+CHECKPOINT TOOK 1.2662158012390137
+Current checkpoint time median is: 1.2662122249603271
+Iter 314
+Iter 315
+Iter 316
+Iter 317
+Iter 318
+Iter 319
+Iter 320
+Iter 321
+Iter 322
+Iter 323
+CHECKPOINT TOOK 1.2836549282073975
+Current checkpoint time median is: 1.2836511135101318
+Iter 324
+Iter 325
+Iter 326
+Iter 327
+Iter 328
+Iter 329
+Iter 330
+Iter 331
+Iter 332
+Iter 333
+CHECKPOINT TOOK 1.2659332752227783
+Current checkpoint time median is: 1.2659296989440918
+Iter 334
+Iter 335
+Iter 336
+Iter 337
+Iter 338
+Iter 339
+Iter 340
+Iter 341
+Iter 342
+Iter 343
+CHECKPOINT TOOK 1.1193175315856934
+Current checkpoint time median is: 1.1193134784698486
+Iter 344
+Iter 345
+Iter 346
+Iter 347
+Iter 348
+Iter 349
+Iter 350
+Iter 351
+Iter 352
+Iter 353
+CHECKPOINT TOOK 1.269120216369629
+Current checkpoint time median is: 1.2691166400909424
+Iter 354
+Iter 355
+Iter 356
+Iter 357
+Iter 358
+Iter 359
+Iter 360
+Iter 361
+Iter 362
+Iter 363
+CHECKPOINT TOOK 1.284083366394043
+Current checkpoint time median is: 1.2840797901153564
+Iter 364
+Iter 365
+Iter 366
+Iter 367
+Iter 368
+Iter 369
+Iter 370
+Iter 371
+Iter 372
+Iter 373
+CHECKPOINT TOOK 1.2684822082519531
+Current checkpoint time median is: 1.2684783935546875
+Iter 374
+Iter 375
+Iter 376
+Iter 377
+Iter 378
+Iter 379
+Iter 380
+Iter 381
+Iter 382
+Iter 383
+CHECKPOINT TOOK 1.2867295742034912
+Current checkpoint time median is: 1.2867262363433838
+Iter 384
+Iter 385
+Iter 386
+Iter 387
+Iter 388
+Iter 389
+Iter 390
+Iter 391
+Iter 392
+Iter 393
+CHECKPOINT TOOK 1.2688689231872559
+Current checkpoint time median is: 1.2688648700714111
+Iter 394
+Iter 395
+Iter 396
+Iter 397
+Iter 398
+Iter 399
+Iter 400
+Iter 401
+Iter 402
+Iter 403
+CHECKPOINT TOOK 1.2856204509735107
+Current checkpoint time median is: 1.2856156826019287
+Iter 404
+Iter 405
+Iter 406
+Iter 407
+Iter 408
+Iter 409
+Iter 410
+Iter 411
+Iter 412
+Iter 413
+CHECKPOINT TOOK 1.2713623046875
+Current checkpoint time median is: 1.2713589668273926
+Iter 414
+Iter 415
+Iter 416
+Iter 417
+Iter 418
+Iter 419
+Iter 420
+Iter 421
+Iter 422
+Iter 423
+CHECKPOINT TOOK 1.2851519584655762
+Current checkpoint time median is: 1.2851483821868896
+Iter 424
+Iter 425
+Iter 426
+Iter 427
+Iter 428
+Iter 429
+Iter 430
+Iter 431
+Iter 432
+Iter 433
+CHECKPOINT TOOK 1.2689220905303955
+Current checkpoint time median is: 1.2689175605773926
+Iter 434
+Iter 435
+Iter 436
+Iter 437
+Iter 438
+Iter 439
+Iter 440
+Iter 441
+Iter 442
+Iter 443
+CHECKPOINT TOOK 1.2840702533721924
+Current checkpoint time median is: 1.2840664386749268
+time: 324.000000 ms, Checkpoint time: 905.000000 ms
+Checkpoint took 1229678 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 839.148228 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1213.000000 ms, Map time: 323.000000 ms, Checkpoint time: 890.000000 ms
+Checkpoint took 1213781 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 856.632371 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1231.000000 ms, Map time: 324.000000 ms, Checkpoint time: 907.000000 ms
+Checkpoint took 1232031 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 839.074516 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1214.000000 ms, Map time: 324.000000 ms, Checkpoint time: 890.000000 ms
+Checkpoint took 1214156 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 855.128224 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1230.000000 ms, Map time: 324.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1230885 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 840.666521 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1216.000000 ms, Map time: 325.000000 ms, Checkpoint time: 891.000000 ms
+Checkpoint took 1216608 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 854.649296 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1230.000000 ms, Map time: 324.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1230242 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 839.361426 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1214.000000 ms, Map time: 324.000000 ms, Checkpoint time: 890.000000 ms
+Checkpoint took 1214413 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 854.028217 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1229.000000 ms, Map time: 324.000000 ms, Checkpoint time: 905.000000 ms
+Checkpoint took 1229400 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 839.353125 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1218.000000 ms, Map time: 328.000000 ms, Checkpoint time: 890.000000 ms
+Checkpoint took 1218415 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 854.681904 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1230.000000 ms, Map time: 324.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1230092 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 838.922796 ms
+Persist error at address 0x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1215.000000 ms, Map time: 325.000000 ms, Checkpoint time: 890.000000 ms
+Checkpoint took 1215152 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 855.169178 ms
+Persist error at address 0x7f38d5033000, size 553434368, is Success
+prev_ind is 0, all_part_size is 553434368
+Total time: 1230.000000 ms, Map time: 324.000000 ms, Checkpoint time: 906.000000 ms
+Checkpoint took 1231052 us
+Persist error at address 0x7f38b4066000, partition 0, is Success
+---------- MSYNC 2 TOOK 839.378444 ms
+Persist error at address 0Iter 444
+Iter 445
+Iter 446
+Iter 447
+Iter 448
+Iter 449
+Iter 450
+Iter 451
+Iter 452
+Iter 453
+CHECKPOINT TOOK 1.2731130123138428
+Current checkpoint time median is: 1.2731091976165771
+Iter 454
+Iter 455
+Iter 456
+Iter 457
+Iter 458
+Iter 459
+Iter 460
+Iter 461
+Iter 462
+Iter 463
+CHECKPOINT TOOK 1.2843291759490967
+Current checkpoint time median is: 1.284325122833252
+Iter 464
+Iter 465
+Iter 466
+Iter 467
+Iter 468
+Iter 469
+Iter 470
+Iter 471
+Iter 472
+Iter 473
+CHECKPOINT TOOK 1.2699840068817139
+Current checkpoint time median is: 1.2699799537658691
+Iter 474
+Iter 475
+Iter 476
+Iter 477
+Iter 478
+Iter 479
+Iter 480
+Iter 481
+Iter 482
+Iter 483
+CHECKPOINT TOOK 1.2857260704040527
+Current checkpoint time median is: 1.2857227325439453
+Iter 484
+Iter 485
+Iter 486
+Iter 487
+Iter 488
+Iter 489
+Iter 490
+Iter 491
+Iter 492
+Iter 493
+CHECKPOINT TOOK 1.268589735031128
+Current checkpoint time median is: 1.2685859203338623
+Iter 494
+Iter 495
+Iter 496
+Iter 497
+Iter 498
+Iter 499
+-- BENCHMARK ENDED: Total time: 91.06940960884094 sec, Number of iterations: 500, Number of checkpoints: 50
+EXECUTION TIME: 91.06940960884094 sec
+THROUGHPUT IS 5.457375886532064
+x7f38b4067000, size 553434368, is Success
+prev_ind is 1, all_part_size is 553434368
+Total time: 1213.000000 ms, Map time: 323.000000 ms, Checkpoint time: 890.000000 ms
+Checkpoint took 1213989 us
+Total MMAP/UMAP time was 16344.000000 ms

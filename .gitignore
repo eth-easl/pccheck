@@ -1,0 +1,12 @@
+# C/C++ files
+
+*.so
+*.o
+__pycache__/
+*.egg-info/
+.installed.cfg
+*.egg
+.eggs/
+*.egg-info
+*.chk
+*.vscode/

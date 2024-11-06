@@ -1,0 +1,1068 @@
+Process with pid 3764, args is Namespace(arch='vgg16', batchsize=32, train_dir='', dataset='imagenet', cfreq=50, max_async=4, num_threads=2, psize=8, c_lib_path='/home/fot/pccheck/checkpoint_eval/pccheck/libtest_ssd.so', bench_total_steps=500)
+BSIZE IS 34589386
+At checkpoint, bsize is 34589386
+PR_ADDR_DATA is 0x7f453e73d000, PR_ADDR is 0x7f453e725000
+--------------- init enqueue: 0
+--------------- init enqueue: 1
+--------------- init enqueue: 2
+--------------- init enqueue: 3
+--------------- init enqueue: 4
+Call dram.alloc, num_batches is 16, batch_size_floats is 34589386
+Parall_iter 0, Write new metadata at address 0x7f453e72d000
+At savenvmNew, tid is 82, parall_iter is 0, num_threads is 2, last counter is 0, curr_counter is 1
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvmNew, tid is 83, parall_iter is 0, num_threads is 2, last counter is 0, curr_counter is 1
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvmNew, tid is 84, parall_iter is 0, num_threads is 2, last counter is 0, curr_counter is 1
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvmNew, tid is 87, parall_iter is 0, num_threads is 2, last counter is 0, curr_counter is 1
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvmNew, tid is 90, parall_iter is 0, num_threads is 2, last counter is 0, curr_counter is 1
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvmNew, tid is 93, parall_iter is 0, num_threads is 2, last counter is 0, curr_counter is 1
+Save checkpoint - create threads!
+At savenvmNew, tid is 96, parall_iter is 0, num_threads is 2, last counter is 0, curr_counter is 1
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvmNew, tid is 99, parall_iter is 0, num_threads is 2, last counter is 0, curr_counter is 1
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+MSYNC TOOK 1426.917915 ms
+CAS was successful! new counter is 1
+Parall_iter 1, Write new metadata at address 0x7f453e731000
+At savenvmNew, tid is 107, parall_iter is 1, num_threads is 2, last counter is 1, curr_counter is 2
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvmNew, tid is 108, parall_iter is 1, num_threads is 2, last counter is 1, curr_counter is 2
+Save checkpoint - create threads!
+At savenvmNew, tid is 109, parall_iter is 1, num_threads is 2, last counter is 1, curr_counter is 2
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvmNew, tid is 112, parall_iter is 1, num_threads is 2, last counter is 1, curr_counter is 2
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvmNew, tid is 115, parall_iter is 1, num_threads is 2, last counter is 1, curr_counter is 2
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvmNew, tid is 117, parall_iter is 1, num_threads is 2, last counter is 1, curr_counter is 2
+Save checkpoint - create threads!
+At savenvmNew, tid is 121, parall_iter is 1, num_threads is 2, last counter is 1, curr_counter is 2
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvmNew, tid is 124, parall_iter is 1, num_threads is 2, last counter is 1, curr_counter is 2
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 4, sz is 17294666!
+MSYNC TOOK 1426.579144 ms
+CAS was successful! new counter is 2
+Parall_iter 2, Write new metadata at address 0x7f453e735000
+At savenvmNew, tid is 4, parall_iter is 2, num_threads is 2, last counter is 2, curr_counter is 3
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvmNew, tid is 5, parall_iter is 2, num_threads is 2, last counter is 2, curr_counter is 3
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvmNew, tid is 9, parall_iter is 2, num_threads is 2, last counter is 2, curr_counter is 3
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvmNew, tid is 6, parall_iter is 2, num_threads is 2, last counter is 2, curr_counter is 3
+Save checkpoint - create threads!
+At savenvmNew, tid is 12, parall_iter is 2, num_threads is 2, last counter is 2, curr_counter is 3
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvmNew, tid is 13, parall_iter is 2, num_threads is 2, last counter is 2, curr_counter is 3
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvmNew, tid is 16, parall_iter is 2, num_threads is 2, last counter is 2, curr_counter is 3
+Save checkpoint - create threads!
+At savenvmNew, tid is 20, parall_iter is 2, num_threads is 2, last counter is 2, curr_counter is 3
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+MSYNC TOOK 1426.565232 ms
+CAS was successful! new counter is 3
+Parall_iter 3, Write new metadata at address 0x7f453e739000
+At savenvmNew, tid is 37, parall_iter is 3, num_threads is 2, last counter is 3, curr_counter is 4
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvmNew, tid is 38, parall_iter is 3, num_threads is 2, last counter is 3, curr_counter is 4
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvmNew, tid is 39, parall_iter is 3, num_threads is 2, last counter is 3, curr_counter is 4
+Save checkpoint - create threads!
+At savenvmNew, tid is 42, parall_iter is 3, num_threads is 2, last counter is 3, curr_counter is 4
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvmNew, tid is 45, parall_iter is 3, num_threads is 2, last counter is 3, curr_counter is 4
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvmNew, tid is 48, parall_iter is 3, num_threads is 2, last counter is 3, curr_counter is 4
+Save checkpoint - create threads!
+At savenvmNew, tid is 51, parall_iter is 3, num_threads is 2, last counter is 3, curr_counter is 4
+Save checkpoint - create threads!
+At savenvmNew, tid is 54, parall_iter is 3, num_threads is 2, last counter is 3, curr_counter is 4
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvm_thread_nd id is 7, sz is 17294720!
+MSYNC TOOK 1425.615202 ms
+CAS was successful! new counter is 4
+Parall_iter 4, Write new metadata at address 0x7f453e73d000
+At savenvmNew, tid is 62, parall_iter is 4, num_threads is 2, last counter is 4, curr_counter is 5
+Save checkpoint - create threads!
+At savenvm_thread_nStep 1 took 0.3556382656097412
+Step 2 took 0.012340068817138672
+Step 3 took 0.07138943672180176
+******************** CALL SAVE ********************
+Start clock!
+Step 4 took 0.06952166557312012
+Step 5 took 0.16184473037719727
+Step 6 took 0.01275634765625
+Step 7 took 0.06376409530639648
+Step 8 took 0.06376934051513672
+Step 9 took 0.06371068954467773
+Step 10 took 0.06374311447143555
+Step 11 took 0.06375932693481445
+Step 12 took 0.06368613243103027
+Step 13 took 0.06371712684631348
+Step 14 took 0.06374239921569824
+Step 15 took 0.06403613090515137
+Step 16 took 0.06360363960266113
+Step 17 took 0.06374311447143555
+Step 18 took 0.06484627723693848
+Step 19 took 0.06258964538574219
+Step 20 took 0.0635528564453125
+Step 21 took 0.06372690200805664
+Step 22 took 0.06345510482788086
+Step 23 took 0.06362652778625488
+Step 24 took 0.06368255615234375
+Step 25 took 0.0635528564453125
+Step 26 took 0.06364798545837402
+Step 27 took 0.0633854866027832
+Step 28 took 0.06343483924865723
+Step 29 took 0.06339263916015625
+Step 30 took 0.06359529495239258
+Step 31 took 0.06344199180603027
+Step 32 took 0.06410098075866699
+Step 33 took 0.07490229606628418
+Step 34 took 0.05187177658081055
+Step 35 took 0.06410765647888184
+Step 36 took 0.06337499618530273
+Step 37 took 0.06346821784973145
+Step 38 took 0.06351375579833984
+Step 39 took 0.06382036209106445
+Step 40 took 0.06370735168457031
+Step 41 took 0.06330037117004395
+Step 42 took 0.06329894065856934
+Step 43 took 0.06357383728027344
+Step 44 took 0.06339430809020996
+Step 45 took 0.06337642669677734
+Step 46 took 0.06349611282348633
+Step 47 took 0.06513047218322754
+Step 48 took 0.06370043754577637
+Step 49 took 0.062345027923583984
+Step 50 took 0.06345701217651367
+Step 51 took 0.0637357234954834
+Step 52 took 0.06334590911865234
+Step 53 took 0.06366205215454102
+******************** CALL SAVE ********************
+Step 54 took 0.06349539756774902
+Step 55 took 0.1468346118927002
+Step 56 took 0.012514829635620117
+Step 57 took 0.06389355659484863
+Step 58 took 0.06368851661682129
+Step 59 took 0.06379055976867676
+Step 60 took 0.06362485885620117
+Step 61 took 0.06376504898071289
+Step 62 took 0.06361246109008789
+Step 63 took 0.06370711326599121
+Step 64 took 0.06365180015563965
+Step 65 took 0.06369352340698242
+Step 66 took 0.06371879577636719
+Step 67 took 0.06779170036315918
+Step 68 took 0.05937457084655762
+Step 69 took 0.0677800178527832
+Step 70 took 0.05979800224304199
+Step 71 took 0.06370878219604492
+Step 72 took 0.06952762603759766
+Step 73 took 0.05751919746398926
+Step 74 took 0.06366133689880371
+Step 75 took 0.06343269348144531
+Step 76 took 0.06398892402648926
+Step 77 took 0.06333112716674805
+Step 78 took 0.06349015235900879
+Step 79 took 0.06363320350646973
+Step 80 took 0.06403803825378418
+Step 81 took 0.06340265274047852
+Step 82 took 0.0636146068572998
+Step 83 took 0.06365156173706055
+Step 84 took 0.06353139877319336
+Step 85 took 0.0638422966003418
+Step 86 took 0.06369924545288086
+Step 87 took 0.06355810165405273
+Step 88 took 0.06332063674926758
+Step 89 took 0.06385135650634766
+Step 90 took 0.06319713592529297
+Step 91 took 0.06338882446289062
+Step 92 took 0.0636434555053711
+Step 93 took 0.06336641311645508
+Step 94 took 0.06344914436340332
+Step 95 took 0.06343889236450195
+Step 96 took 0.0634455680847168
+Step 97 took 0.06345438957214355
+Step 98 took 0.06361556053161621
+Step 99 took 0.06342816352844238
+Step 100 took 0.06350874900817871
+Step 101 took 0.06361556053161621
+Step 102 took 0.06366515159606934
+Step 103 took 0.06345915794372559
+******************** CALL SAVE ********************
+Step 104 took 0.06376218795776367
+Step 105 took 0.1460280418395996
+Step 106 took 0.016240596771240234
+Step 107 took 0.06510376930236816
+Step 108 took 0.0646510124206543
+Step 109 took 0.0649716854095459
+Step 110 took 0.06455731391906738
+Step 111 took 0.06480264663696289
+Step 112 took 0.0647587776184082
+Step 113 took 0.06475996971130371
+Step 114 took 0.06480240821838379
+Step 115 took 0.06472182273864746
+Step 116 took 0.06451749801635742
+Step 117 took 0.06459999084472656
+Step 118 took 0.06476521492004395
+Step 119 took 0.06087088584899902
+Step 120 took 0.0635366439819336
+Step 121 took 0.06348371505737305
+Step 122 took 0.06358146667480469
+Step 123 took 0.06353974342346191
+Step 124 took 0.0637364387512207
+Step 125 took 0.0636434555053711
+Step 126 took 0.06360197067260742
+Step 127 took 0.0634312629699707
+Step 128 took 0.06386280059814453
+Step 129 took 0.06360936164855957
+Step 130 took 0.06363821029663086
+Step 131 took 0.07545280456542969
+Step 132 took 0.05178546905517578
+Step 133 took 0.0721437931060791
+Step 134 took 0.05495047569274902
+Step 135 took 0.06340289115905762
+Step 136 took 0.06389307975769043
+Step 137 took 0.06800389289855957
+Step 138 took 0.058882713317871094
+Step 139 took 0.06345939636230469
+Step 140 took 0.07130765914916992
+Step 141 took 0.056148529052734375
+Step 142 took 0.06340980529785156
+Step 143 took 0.06332230567932129
+Step 144 took 0.0637810230255127
+Step 145 took 0.06327986717224121
+Step 146 took 0.06347846984863281
+Step 147 took 0.06365847587585449
+Step 148 took 0.06380105018615723
+Step 149 took 0.06359744071960449
+Step 150 took 0.06340980529785156
+Step 151 took 0.06336450576782227
+Step 152 took 0.0637211799621582
+Step 153 took 0.0633392333984375
+******************** CALL SAVE ********************
+Step 154 took 0.06367683410644531
+Step 155 took 0.1554422378540039
+Step 156 took 0.012726545333862305
+Step 157 took 0.06385421752929688
+Step 158 took 0.06379842758178711
+Step 159 took 0.06372308731079102
+Step 160 took 0.06367349624633789
+Step 161 took 0.06374859809875488
+Step 162 took 0.0636746883392334
+Step 163 took 0.06373119354248047
+Step 164 took 0.06370353698730469
+Step 165 took 0.06354951858520508
+Step 166 took 0.0637505054473877
+Step 167 took 0.06362700462341309
+Step 168 took 0.06362605094909668
+Step 169 took 0.07314157485961914
+Step 170 took 0.054107666015625
+Step 171 took 0.0658571720123291
+Step 172 took 0.06150317192077637
+Step 173 took 0.0637505054473877
+Step 174 took 0.06372833251953125
+Step 175 took 0.06382894515991211
+Step 176 took 0.06349492073059082
+Step 177 took 0.06399917602539062
+Step 178 took 0.06342101097106934
+Step 179 took 0.06365966796875
+Step 180 took 0.06357836723327637
+Step 181 took 0.06341814994812012
+Step 182 took 0.063629150390625
+Step 183 took 0.06364583969116211
+Step 184 took 0.0635993480682373
+Step 185 took 0.0635519027709961
+Step 186 took 0.0634608268737793
+Step 187 took 0.06395745277404785
+Step 188 took 0.06466531753540039
+Step 189 took 0.06196761131286621
+Step 190 took 0.06361865997314453
+Step 191 took 0.06351375579833984
+Step 192 took 0.06328320503234863
+Step 193 took 0.06351208686828613
+Step 194 took 0.06407713890075684
+Step 195 took 0.06367301940917969
+Step 196 took 0.06331515312194824
+Step 197 took 0.06316709518432617
+Step 198 took 0.06344747543334961
+Step 199 took 0.06346726417541504
+Step 200 took 0.06337714195251465
+Step 201 took 0.06351161003112793
+Step 202 took 0.06332540512084961
+Step 203 took 0.06357455253601074
+******************** CALL SAVE ********************
+Step 204 took 0.06347155570983887
+Step 205 took 0.15009856224060059
+Step 206 took 0.012522697448730469
+Step 207 took 0.06384754180908203
+Step 208 took 0.06366801261901855
+Step 209 took 0.06375980377197266
+Step 210 took 0.06369876861572266
+Step 211 took 0.06374359130859375
+Step 212 took 0.06368303298950195
+Step 213 took 0.06383919715881348
+Step 214 took 0.0635831356048584
+Step 215 took 0.06365561485290527
+Step 216 took 0.06382369995117188
+Step 217 took 0.06361174583435059
+Step 218 took 0.06363606452941895
+Step 219 took 0.07337069511413574
+Step 220 took 0.05376935005187988
+Step 221 took 0.06405997276306152
+Step 222 took 0.06340408325195312
+Step 223 took 0.0638277530670166
+Step 224 took 0.06346440315246582
+Step 225 took 0.06398391723632812
+Step 226 took 0.06368088722229004
+Step 227 took 0.06347250938415527
+Step 228 took 0.06341838836669922
+Step 229 took 0.06352710723876953
+Step 230 took 0.06340813636779785
+Step 231 took 0.06352519989013672
+Step 232 took 0.06362152099609375
+Step 233 took 0.0636587142944336
+Step 234 took 0.06362104415893555
+Step 235 took 0.06378507614135742
+Step 236 took 0.06399774551391602
+Step 237 took 0.06335687637329102
+d id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvmNew, tid is 63, parall_iter is 4, num_threads is 2, last counter is 4, curr_counter is 5
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvmNew, tid is 64, parall_iter is 4, num_threads is 2, last counter is 4, curr_counter is 5
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvmNew, tid is 67, parall_iter is 4, num_threads is 2, last counter is 4, curr_counter is 5
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvmNew, tid is 70, parall_iter is 4, num_threads is 2, last counter is 4, curr_counter is 5
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvmNew, tid is 73, parall_iter is 4, num_threads is 2, last counter is 4, curr_counter is 5
+Save checkpoint - create threads!
+At savenvmNew, tid is 76, parall_iter is 4, num_threads is 2, last counter is 4, curr_counter is 5
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvmNew, tid is 79, parall_iter is 4, num_threads is 2, last counter is 4, curr_counter is 5
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 10, sz is 17294666!
+MSYNC TOOK 1425.397486 ms
+CAS was successful! new counter is 5
+Parall_iter 0, Write new metadata at address 0x7f453e72d000
+At savenvmNew, tid is 87, parall_iter is 0, num_threads is 2, last counter is 5, curr_counter is 6
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvmNew, tid is 88, parall_iter is 0, num_threads is 2, last counter is 5, curr_counter is 6
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvmNew, tid is 89, parall_iter is 0, num_threads is 2, last counter is 5, curr_counter is 6
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvmNew, tid is 92, parall_iter is 0, num_threads is 2, last counter is 5, curr_counter is 6
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvmNew, tid is 95, parall_iter is 0, num_threads is 2, last counter is 5, curr_counter is 6
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvmNew, tid is 98, parall_iter is 0, num_threads is 2, last counter is 5, curr_counter is 6
+Save checkpoint - create threads!
+At savenvmNew, tid is 101, parall_iter is 0, num_threads is 2, last counter is 5, curr_counter is 6
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvmNew, tid is 104, parall_iter is 0, num_threads is 2, last counter is 5, curr_counter is 6
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+At savenvm_thread_nd id is 2, sz is 17294666!
+At savenvm_thread_nd id is 1, sz is 17294720!
+MSYNC TOOK 1455.809719 ms
+CAS was successful! new counter is 6
+Parall_iter 1, Write new metadata at address 0x7f453e731000
+At savenvmNew, tid is 112, parall_iter is 1, num_threads is 2, last counter is 6, curr_counter is 7
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvmNew, tid is 113, parall_iter is 1, num_threads is 2, last counter is 6, curr_counter is 7
+Save checkpoint - create threads!
+At savenvmNew, tid is 114, parall_iter is 1, num_threads is 2, last counter is 6, curr_counter is 7
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvmNew, tid is 117, parall_iter is 1, num_threads is 2, last counter is 6, curr_counter is 7
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvmNew, tid is 120, parall_iter is 1, num_threads is 2, last counter is 6, curr_counter is 7
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvmNew, tid is 123, parall_iter is 1, num_threads is 2, last counter is 6, curr_counter is 7
+Save checkpoint - create threads!
+At savenvmNew, tid is 126, parall_iter is 1, num_threads is 2, last counter is 6, curr_counter is 7
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvmNew, tid is 1, parall_iter is 1, num_threads is 2, last counter is 6, curr_counter is 7
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 4, sz is 17294666!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 3, sz is 17294720!
+At savenvm_thread_nd id is 4, sz is 17294666!
+MSYNC TOOK 1479.954068 ms
+CAS was successful! new counter is 7
+Parall_iter 2, Write new metadata at address 0x7f453e735000
+At savenvmNew, tid is 9, parall_iter is 2, num_threads is 2, last counter is 7, curr_counter is 8
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvmNew, tid is 10, parall_iter is 2, num_threads is 2, last counter is 7, curr_counter is 8
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvmNew, tid is 11, parall_iter is 2, num_threads is 2, last counter is 7, curr_counter is 8
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvmNew, tid is 14, parall_iter is 2, num_threads is 2, last counter is 7, curr_counter is 8
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvmNew, tid is 17, parall_iter is 2, num_threads is 2, last counter is 7, curr_counter is 8
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvmNew, tid is 20, parall_iter is 2, num_threads is 2, last counter is 7, curr_counter is 8
+Save checkpoint - create threads!
+At savenvmNew, tid is 23, parall_iter is 2, num_threads is 2, last counter is 7, curr_counter is 8
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvmNew, tid is 26, parall_iter is 2, num_threads is 2, last counter is 7, curr_counter is 8
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 6, sz is 17294666!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvm_thread_nd id is 5, sz is 17294720!
+At savenvm_thread_nd id is 6, sz is 17294666!
+MSYNC TOOK 1456.673235 ms
+CAS was successful! new counter is 8
+Parall_iter 3, Write new metadata at address 0x7f453e739000
+At savenvmNew, tid is 34, parall_iter is 3, num_threads is 2, last counter is 8, curr_counter is 9
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvmNew, tid is 35, parall_iter is 3, num_threads is 2, last counter is 8, curr_counter is 9
+Save checkpoint - create threads!
+At savenvmNew, tid is 36, parall_iter is 3, num_threads is 2, last counter is 8, curr_counter is 9
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenStep 238 took 0.06344103813171387
+Step 239 took 0.06322884559631348
+Step 240 took 0.06384825706481934
+Step 241 took 0.06367278099060059
+Step 242 took 0.0636751651763916
+Step 243 took 0.06338977813720703
+Step 244 took 0.0633089542388916
+Step 245 took 0.06365847587585449
+Step 246 took 0.06325101852416992
+Step 247 took 0.06342101097106934
+Step 248 took 0.0634772777557373
+Step 249 took 0.06346797943115234
+Step 250 took 0.06346702575683594
+Step 251 took 0.06347274780273438
+Step 252 took 0.06356954574584961
+Step 253 took 0.0636897087097168
+******************** CALL SAVE ********************
+Step 254 took 0.06346249580383301
+Step 255 took 0.1680464744567871
+Step 256 took 0.012436389923095703
+Step 257 took 0.06406068801879883
+Step 258 took 0.06313538551330566
+Step 259 took 0.0638737678527832
+Step 260 took 0.06375694274902344
+Step 261 took 0.06390690803527832
+Step 262 took 0.06625843048095703
+Step 263 took 0.06113600730895996
+Step 264 took 0.06365776062011719
+Step 265 took 0.07389187812805176
+Step 266 took 0.05363869667053223
+Step 267 took 0.06368780136108398
+Step 268 took 0.06379580497741699
+Step 269 took 0.06392526626586914
+Step 270 took 0.06362080574035645
+Step 271 took 0.06363677978515625
+Step 272 took 0.06377267837524414
+Step 273 took 0.07578444480895996
+Step 274 took 0.05089235305786133
+Step 275 took 0.0636448860168457
+Step 276 took 0.0634770393371582
+Step 277 took 0.06364822387695312
+Step 278 took 0.06350326538085938
+Step 279 took 0.06342196464538574
+Step 280 took 0.06563758850097656
+Step 281 took 0.06321215629577637
+Step 282 took 0.06279993057250977
+Step 283 took 0.06343793869018555
+Step 284 took 0.06371760368347168
+Step 285 took 0.06327319145202637
+Step 286 took 0.0633237361907959
+Step 287 took 0.0638883113861084
+Step 288 took 0.06382536888122559
+Step 289 took 0.06328272819519043
+Step 290 took 0.06327342987060547
+Step 291 took 0.06362152099609375
+Step 292 took 0.06343507766723633
+Step 293 took 0.0634012222290039
+Step 294 took 0.06354427337646484
+Step 295 took 0.06403756141662598
+Step 296 took 0.06325030326843262
+Step 297 took 0.06358122825622559
+Step 298 took 0.06363320350646973
+Step 299 took 0.06332850456237793
+Step 300 took 0.06350231170654297
+Step 301 took 0.06348991394042969
+Step 302 took 0.06351017951965332
+Step 303 took 0.0637359619140625
+******************** CALL SAVE ********************
+Step 304 took 0.08329558372497559
+Step 305 took 0.15115714073181152
+Step 306 took 0.012398958206176758
+Step 307 took 0.06357955932617188
+Step 308 took 0.06361222267150879
+Step 309 took 0.0634758472442627
+Step 310 took 0.0632927417755127
+Step 311 took 0.06340956687927246
+Step 312 took 0.06448578834533691
+Step 313 took 0.07254147529602051
+Step 314 took 0.05464625358581543
+Step 315 took 0.06347465515136719
+Step 316 took 0.06389808654785156
+Step 317 took 0.07395219802856445
+Step 318 took 0.0533289909362793
+Step 319 took 0.06380057334899902
+Step 320 took 0.06385397911071777
+Step 321 took 0.06345868110656738
+Step 322 took 0.06378626823425293
+Step 323 took 0.06347155570983887
+Step 324 took 0.0641334056854248
+Step 325 took 0.06276297569274902
+Step 326 took 0.06345534324645996
+Step 327 took 0.06366348266601562
+Step 328 took 0.06353092193603516
+Step 329 took 0.06363344192504883
+Step 330 took 0.06364130973815918
+Step 331 took 0.06368613243103027
+Step 332 took 0.06351900100708008
+Step 333 took 0.06389355659484863
+Step 334 took 0.06362318992614746
+Step 335 took 0.06298279762268066
+Step 336 took 0.06320881843566895
+Step 337 took 0.06386089324951172
+Step 338 took 0.06353974342346191
+Step 339 took 0.06329011917114258
+Step 340 took 0.06345987319946289
+Step 341 took 0.06334495544433594
+Step 342 took 0.0635232925415039
+Step 343 took 0.06339001655578613
+Step 344 took 0.06356978416442871
+Step 345 took 0.06341052055358887
+Step 346 took 0.06379055976867676
+Step 347 took 0.06330204010009766
+Step 348 took 0.06345295906066895
+Step 349 took 0.06403565406799316
+Step 350 took 0.06386208534240723
+Step 351 took 0.06348133087158203
+Step 352 took 0.06320738792419434
+Step 353 took 0.06354856491088867
+******************** CALL SAVE ********************
+Step 354 took 0.06346988677978516
+Step 355 took 0.14726829528808594
+Step 356 took 0.013177156448364258
+Step 357 took 0.06842398643493652
+Step 358 took 0.0621793270111084
+Step 359 took 0.06533432006835938
+Step 360 took 0.06378865242004395
+Step 361 took 0.06454086303710938
+Step 362 took 0.06430339813232422
+Step 363 took 0.06407761573791504
+Step 364 took 0.06958723068237305
+Step 365 took 0.054944753646850586
+Step 366 took 0.06375885009765625
+Step 367 took 0.06370925903320312
+Step 368 took 0.06349468231201172
+Step 369 took 0.07380485534667969
+Step 370 took 0.05353999137878418
+Step 371 took 0.0634760856628418
+Step 372 took 0.06386041641235352
+Step 373 took 0.06361055374145508
+Step 374 took 0.0638430118560791
+Step 375 took 0.07242894172668457
+Step 376 took 0.05442929267883301
+Step 377 took 0.06404876708984375
+Step 378 took 0.06369256973266602
+Step 379 took 0.06346726417541504
+Step 380 took 0.06378984451293945
+Step 381 took 0.06364774703979492
+Step 382 took 0.06358742713928223
+Step 383 took 0.06363892555236816
+Step 384 took 0.06360411643981934
+Step 385 took 0.06356954574584961
+Step 386 took 0.06326770782470703
+Step 387 took 0.06369471549987793
+Step 388 took 0.06351971626281738
+Step 389 took 0.06336522102355957
+Step 390 took 0.06345343589782715
+Step 391 took 0.06411337852478027
+Step 392 took 0.06330728530883789
+Step 393 took 0.06328749656677246
+Step 394 took 0.0635840892791748
+Step 395 took 0.06382060050964355
+Step 396 took 0.06370091438293457
+Step 397 took 0.06352710723876953
+Step 398 took 0.06328535079956055
+Step 399 took 0.06347179412841797
+Step 400 took 0.06382632255554199
+Step 401 took 0.0633249282836914
+Step 402 took 0.06339335441589355
+Step 403 took 0.06355953216552734
+******************** CALL SAVE ********************
+Step 404 took 0.06347465515136719
+Step 405 took 0.170914888381958
+Step 406 took 0.012099742889404297
+Step 407 took 0.0636897087097168
+Step 408 took 0.06351256370544434
+Step 409 took 0.0635228157043457
+Step 410 took 0.06354403495788574
+Step 411 took 0.0670173168182373
+Step 412 took 0.06092405319213867
+Step 413 took 0.06378626823425293
+Step 414 took 0.06378602981567383
+Step 415 took 0.0637214183807373
+Step 416 took 0.06345868110656738
+Step 417 took 0.06376457214355469
+Step 418 took 0.0637211799621582
+Step 419 took 0.06356263160705566
+Step 420 took 0.06518435478210449
+Step 421 took 0.06239151954650879
+Step 422 took 0.06355547904968262
+Step 423 took 0.06357026100158691
+Step 424 took 0.06375479698181152
+Step 425 took 0.0635528564453125
+Step 426 took 0.06467413902282715
+Step 427 took 0.062474727630615234
+Step 428 took 0.06352400779724121
+Step 429 took 0.06343293190002441
+Step 430 took 0.06388735771179199
+Step 431 took 0.0633842945098877
+Step 432 took 0.06364130973815918
+Step 433 took 0.06350111961364746
+Step 434 took 0.06331467628479004
+Step 435 took 0.0634005069732666
+Step 436 took 0.06375694274902344
+Step 437 took 0.0634002685546875
+Step 438 took 0.06344723701477051
+Step 439 took 0.06374049186706543
+Step 440 took 0.06356334686279297
+Step 441 took 0.06337308883666992
+Step 442 took 0.06520533561706543
+Step 443 took 0.06246471405029297
+Step 444 took 0.0632483959197998
+Step 445 took 0.0636601448059082
+Step 446 took 0.06350517272949219
+Step 447 took 0.06334519386291504
+Step 448 took 0.06362032890319824
+Step 449 took 0.06341814994812012
+Step 450 took 0.06344938278198242
+Step 451 took 0.06340813636779785
+Step 452 took 0.06368494033813477
+Step 453 took 0.06341171264648438
+******************** CALL SAVE ********************
+Step 454 took 0.06391453742980957
+Step 455 took 0.17159008979797363
+Step 456 took 0.012147903442382812
+Step 457 took 0.06390023231506348
+Step 458 took 0.06362748146057129
+Step 459 took 0.06348657608032227
+Step 460 took 0.06338739395141602
+Step 461 took 0.06376338005065918
+Step 462 took 0.06382274627685547
+Step 463 took 0.06374263763427734
+Step 464 took 0.0640723705291748
+Step 465 took 0.06332516670227051
+Step 466 took 0.06363868713378906
+Step 467 took 0.06355571746826172
+Step 468 took 0.06777739524841309
+Step 469 took 0.05976152420043945
+Step 470 took 0.06384754180908203
+Step 471 took 0.06341814994812012
+total_size: 276715088, bsize: 34589386, ratio: 2.0
+34589386 16
+SAVE MEM!
+Save checkpoint with process 0
+************** New checkpoint at position 0
+GPU copy took 11.004209518432617 ms
+GPU copy took 10.689735412597656 ms
+GPU copy took 12.08806037902832 ms
+GPU copy took 13.062000274658203 ms
+GPU copy took 12.287378311157227 ms
+GPU copy took 15.943288803100586 ms
+GPU copy took 11.281490325927734 ms
+GPU copy took 13.3514404296875 ms
+CPU copy took 516.5295600891113 ms
+CPU copy took 602.928876876831 ms
+CPU copy took 625.7975101470947 ms
+CPU copy took 626.6059875488281 ms
+CPU copy took 654.8428535461426 ms
+CPU copy took 638.0748748779297 ms
+CPU copy took 626.5783309936523 ms
+CPU copy took 2040.0376319885254 ms
+---------------------- [PERF] Single Checkpoint time is 2.1836698055267334 sec, average is 2.1836671829223633
+Save checkpoint with process 0
+************** New checkpoint at position 1
+GPU copy took 10.715961456298828 ms
+GPU copy took 10.870695114135742 ms
+GPU copy took 10.656595230102539 ms
+GPU copy took 11.951684951782227 ms
+GPU copy took 11.437177658081055 ms
+GPU copy took 10.675430297851562 ms
+GPU copy took 11.490345001220703 ms
+GPU copy took 13.955116271972656 ms
+CPU copy took 487.9872798919678 ms
+CPU copy took 574.2323398590088 ms
+CPU copy took 617.1135902404785 ms
+CPU copy took 621.9289302825928 ms
+CPU copy took 617.1779632568359 ms
+CPU copy took 652.4066925048828 ms
+CPU copy took 621.6301918029785 ms
+CPU copy took 2038.5000705718994 ms
+---------------------- [PERF] Single Checkpoint time is 2.1636979579925537 sec, average is 2.173681616783142
+Save checkpoint with process 0
+************** New checkpoint at position 2
+GPU copy took 10.679244995117188 ms
+GPU copy took 10.862350463867188 ms
+GPU copy took 13.021230697631836 ms
+GPU copy took 11.063575744628906 ms
+GPU copy took 11.69896125793457 ms
+GPU copy took 11.104345321655273 ms
+GPU copy took 11.520862579345703 ms
+GPU copy took 11.053323745727539 ms
+CPU copy took 713.4499549865723 ms
+CPU copy took 824.0747451782227 ms
+CPU copy took 832.4263095855713 ms
+CPU copy took 853.90305519104 ms
+CPU copy took 837.1894359588623 ms
+CPU copy took 846.4765548706055 ms
+CPU copy took 869.9495792388916 ms
+CPU copy took 2272.3193168640137 ms
+---------------------- [PERF] Single Checkpoint time is 2.397477865219116 sec, average is 2.1836671829223633
+Save checkpoint with process 0
+************** New checkpoint at position 3
+GPU copy took 10.706901550292969 ms
+GPU copy took 10.866165161132812 ms
+GPU copy took 12.502431869506836 ms
+GPU copy took 11.597633361816406 ms
+GPU copy took 17.382144927978516 ms
+GPU copy took 12.86005973815918 ms
+GPU copy took 13.492107391357422 ms
+GPU copy took 11.425018310546875 ms
+CPU copy took 520.4665660858154 ms
+CPU copy took 565.5839443206787 ms
+CPU copy took 619.2672252655029 ms
+CPU copy took 617.1953678131104 ms
+CPU copy took 610.598087310791 ms
+CPU copy took 637.8419399261475 ms
+CPU copy took 624.3538856506348 ms
+CPU copy took 2031.2225818634033 ms
+---------------------- [PERF] Single Checkpoint time is 2.167752981185913 sec, average is 2.175709366798401
+Save checkpoint with process 0
+************** New checkpoint at position 4
+GPU copy took 10.669469833374023 ms
+GPU copy took 10.858535766601562 ms
+GPU copy took 10.662555694580078 ms
+GPU copy took 12.239217758178711 ms
+GPU copy took 12.301206588745117 ms
+GPU copy took 11.931180953979492 ms
+GPU copy took 12.071847915649414 ms
+GPU copy took 13.757467269897461 ms
+CPU copy took 510.6353759765625 ms
+CPU copy took 575.2115249633789 ms
+CPU copy took 597.7015495300293 ms
+CPU copy took 616.4121627807617 ms
+CPU copy took 618.3211803436279 ms
+CPU copy took 614.1164302825928 ms
+CPU copy took 626.227855682373 ms
+CPU copy took 2024.7180461883545 ms
+---------------------- [PERF] Single Checkpoint time is 2.1534175872802734 sec, average is 2.1677515506744385
+Save checkpoint with process 0
+************** New checkpoint at position 0
+GPU copy took 10.70261001586914 ms
+GPU copy took 10.844230651855469 ms
+GPU copy took 10.657072067260742 ms
+GPU copy took 12.725353240966797 ms
+GPU copy took 15.518665313720703 ms
+GPU copy took 17.08984375 ms
+GPU copy took 17.889022827148438 ms
+GPU copy took 15.10167121887207 ms
+CPU copy took 252.13027000427246 ms
+CPU copy took 312.1356964111328 ms
+CPU copy took 324.1581916809082 ms
+CPU copy took 354.8460006713867 ms
+CPU copy took 332.3695659637451 ms
+CPU copy took 350.4483699798584 ms
+CPU copy took 312.99591064453125 ms
+CPU copy took 1765.031099319458 ms
+---------------------- [PERF] Single Checkpoint time is 1.911900281906128 sec, average is 2.1657238006591797
+Save checkpoint with process 0
+************** New checkpoint at position 1
+GPU copy took 10.811328887939453 ms
+GPU copy took 11.879920959472656 ms
+GPU copy took 15.566825866699219 ms
+GPU copy took 13.898372650146484 ms
+GPU copy took 11.273384094238281 ms
+GPU copy took 12.932062149047852 ms
+GPU copy took 16.505718231201172 ms
+GPU copy took 16.285419464111328 ms
+CPU copy took 189.20016288757324 ms
+CPU copy took 337.2843265533447 ms
+CPU copy took 341.50147438049316 ms
+CPU copy took 341.74346923828125 ms
+CPU copy took 327.0256519317627 ms
+CPU copy took 355.53884506225586 ms
+CPU copy took 338.32859992980957 ms
+CPU copy took 1793.84446144104 ms
+---------------------- [PERF] Single Checkpoint time is 1.9258332252502441 sec, average is 2.163696050643921
+Save checkpoint with process 0
+************** New checkpoint at position 2
+GPU copy took 10.696887969970703 ms
+GPU copy took 11.236906051635742 ms
+GPU copy took 11.791229248046875 ms
+GPU copy took 12.322187423706055 ms
+GPU copy took 11.785745620727539 ms
+GPU copy took 11.527061462402344 ms
+GPU copy took 11.52181625366211 ms
+GPU copy took 11.610746383666992 ms
+CPU copy took 335.2506160736084 ms
+CPU copy took 396.9006538391113 ms
+CPU copy took 416.31007194519043 ms
+CPU copy took 439.4993782043457 ms
+CPU copy took 436.56277656555176 ms
+CPU copy took 459.95092391967773 ms
+CPU copy took 448.61292839050293 ms
+CPU copy took 1880.2380561828613 ms
+---------------------- [PERF] Single Checkpoint time is 2.0079336166381836 sec, average is 2.1585558652877808
+Save checkpoint with process 0
+************** New checkpoint at position 3
+GPU copy took 10.750293731689453 ms
+GPU copy took 11.462926864624023 ms
+GPU copy took 14.177083969116211 ms
+GPU copy took 12.71367073059082 ms
+GPU copy took 14.312505722045898 ms
+GPU copy took 16.854524612426758 ms
+GPU copy took 19.69766616821289 ms
+GPU copy took 14.075517654418945 ms
+CPU copy took 222.60761260986328 ms
+CPU copy took 311.4447593688965 ms
+CPU copy took 306.16140365600586 ms
+CPU copy took 319.8893070220947 ms
+CPU copy took 357.5453758239746 ms
+CPU copy took 332.0143222808838 ms
+CPU copy took 322.9029178619385 ms
+CPU copy took 1741.5080070495605 ms
+---------------------- [PERF] Single Checkpoint time is 1.891096591949463 sec, average is 2.1534156799316406
+Save checkpoint with process 0
+************** New checkpoint at position 4
+GPU copy took 10.700464248657227 ms
+GPU copy took 10.84589958190918 ms
+GPU copy took 10.672569274902344 ms
+GPU copy took 15.763282775878906 ms
+GPU copy took 16.543865203857422 ms
+GPU copy took 17.533063888549805 ms
+GPU copy took 17.038822174072266 ms
+GPU copy took 15.754938125610352 ms
+CPU copy took 247.72191047668457 ms
+CPU copy took 300.47059059143066 ms
+CPU copy took 317.22402572631836 ms
+CPU copy took 328.9048671722412 ms
+CPU copy took 312.441349029541 ms
+CPU copy took 337.97216415405273 ms
+CPU copy took 321.16079330444336 ms
+CPU copy took 1762.9592418670654 ms
+---------------------- [PERF] Single Checkpoint time is 1.9136557579040527 sec, average is 2.0806734561920166
+---- exit
+vm_thread_nd id is 7, sz is 17294720!
+At savenvmNew, tid is 39, parall_iter is 3, num_threads is 2, last counter is 8, curr_counter is 9
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvmNew, tid is 42, parall_iter is 3, num_threads is 2, last counter is 8, curr_counter is 9
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvmNew, tid is 45, parall_iter is 3, num_threads is 2, last counter is 8, curr_counter is 9
+Save checkpoint - create threads!
+At savenvmNew, tid is 48, parall_iter is 3, num_threads is 2, last counter is 8, curr_counter is 9
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvmNew, tid is 51, parall_iter is 3, num_threads is 2, last counter is 8, curr_counter is 9
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvm_thread_nd id is 7, sz is 17294720!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 8, sz is 17294666!
+At savenvm_thread_nd id is 7, sz is 17294720!
+MSYNC TOOK 1437.214626 ms
+CAS was successful! new counter is 9
+Parall_iter 4, Write new metadata at address 0x7f453e73d000
+At savenvmNew, tid is 59, parall_iter is 4, num_threads is 2, last counter is 9, curr_counter is 10
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvmNew, tid is 60, parall_iter is 4, num_threads is 2, last counter is 9, curr_counter is 10
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvmNew, tid is 61, parall_iter is 4, num_threads is 2, last counter is 9, curr_counter is 10
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvmNew, tid is 64, parall_iter is 4, num_threads is 2, last counter is 9, curr_counter is 10
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvmNew, tid is 67, parall_iter is 4, num_threads is 2, last counter is 9, curr_counter is 10
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvmNew, tid is 70, parall_iter is 4, num_threads is 2, last counter is 9, curr_counter is 10
+Save checkpoint - create threads!
+At savenvmNew, tid is 73, parall_iter is 4, num_threads is 2, last counter is 9, curr_counter is 10
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvmNew, tid is 76, parall_iter is 4, num_threads is 2, last counter is 9, curr_counter is 10
+Save checkpoint - create threads!
+At savenvm_thread_nd id is 10, sz is 17294666!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 9, sz is 17294720!
+At savenvm_thread_nd id is 10, sz is 17294666!
+MSYNC TOOK 1464.523666 ms
+CAS was successful! new counter is 10
+Step 472 took 0.06393122673034668
+Step 473 took 0.06352591514587402
+Step 474 took 0.0656423568725586
+Step 475 took 0.0717172622680664
+Step 476 took 0.05338859558105469
+Step 477 took 0.06342887878417969
+Step 478 took 0.06351733207702637
+Step 479 took 0.0638577938079834
+Step 480 took 0.06344723701477051
+Step 481 took 0.06353569030761719
+Step 482 took 0.0646967887878418
+Step 483 took 0.06267952919006348
+Step 484 took 0.0632944107055664
+Step 485 took 0.063690185546875
+Step 486 took 0.06325626373291016
+Step 487 took 0.06346273422241211
+Step 488 took 0.06377124786376953
+Step 489 took 0.06344151496887207
+Step 490 took 0.06355953216552734
+Step 491 took 0.06345057487487793
+Step 492 took 0.06343221664428711
+Step 493 took 0.06346726417541504
+Step 494 took 0.06345844268798828
+Step 495 took 0.06357526779174805
+Step 496 took 0.063446044921875
+Step 497 took 0.06382632255554199
+Step 498 took 0.06321191787719727
+Step 499 took 0.06344342231750488
+Step 500 took 0.06345319747924805
+-- BENCHMARK ENDED: Total time: 32.0112099647522 sec, Number of iterations: 500, Number of checkpoints: 10
+EXECUTION TIME: 32.0112099647522 sec
+THROUGHPUT IS 15.52581113138962

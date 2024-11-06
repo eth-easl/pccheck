@@ -1,0 +1,1720 @@
+[2024-11-06 19:14:59,713] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-11-06 19:15:01,419] [INFO] [runner.py:560:main] deepspeed_env file = /home/fot/.deepspeed_env
+[2024-11-06 19:15:01,419] [INFO] [multinode_runner.py:80:get_cmd] Running on the following workers: 10.138.0.2,10.138.0.64
+[2024-11-06 19:15:01,419] [INFO] [runner.py:571:main] cmd = pdsh -S -f 1024 -w 10.138.0.2,10.138.0.64 export PYTHONPATH=/home/fot/transformers/examples/pytorch/language-modeling; export GEMINI_MASTER_ADDR=10.138.0.2; export GEMINI_MASTER_PORT=1235;  cd /home/fot/transformers/examples/pytorch/language-modeling; /usr/bin/python3.9 -u -m deepspeed.launcher.launch --world_info=eyIxMC4xMzguMC4yIjogWzBdLCAiMTAuMTM4LjAuNjQiOiBbMF19 --node_rank=%n --master_addr=10.138.0.2 --master_port=1234 run_clm_pp_gemini.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-2.7b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --per_device_train_batch_size 1 --cfreq 0 --bench_total_steps 50
+10.138.0.2: [2024-11-06 19:15:04,632] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+10.138.0.64: [2024-11-06 19:15:04,970] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+10.138.0.2: [2024-11-06 19:15:05,655] [INFO] [launch.py:145:main] WORLD INFO DICT: {'10.138.0.2': [0], '10.138.0.64': [0]}
+10.138.0.2: [2024-11-06 19:15:05,655] [INFO] [launch.py:151:main] nnodes=2, num_local_procs=1, node_rank=0
+10.138.0.2: [2024-11-06 19:15:05,656] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'10.138.0.2': [0], '10.138.0.64': [1]})
+10.138.0.2: [2024-11-06 19:15:05,656] [INFO] [launch.py:163:main] dist_world_size=2
+10.138.0.2: [2024-11-06 19:15:05,656] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0
+10.138.0.64: [2024-11-06 19:15:06,086] [INFO] [launch.py:145:main] WORLD INFO DICT: {'10.138.0.2': [0], '10.138.0.64': [0]}
+10.138.0.64: [2024-11-06 19:15:06,086] [INFO] [launch.py:151:main] nnodes=2, num_local_procs=1, node_rank=1
+10.138.0.64: [2024-11-06 19:15:06,086] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'10.138.0.2': [0], '10.138.0.64': [1]})
+10.138.0.64: [2024-11-06 19:15:06,086] [INFO] [launch.py:163:main] dist_world_size=2
+10.138.0.64: [2024-11-06 19:15:06,086] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0
+10.138.0.2: [2024-11-06 19:15:09,436] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+10.138.0.64: [2024-11-06 19:15:09,807] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+10.138.0.2: [2024-11-06 19:15:09,875] [INFO] [comm.py:637:init_distributed] cdb=None
+10.138.0.2: [2024-11-06 19:15:09,875] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+10.138.0.64: [2024-11-06 19:15:10,234] [INFO] [comm.py:637:init_distributed] cdb=None
+10.138.0.64: 11/06/2024 19:15:10 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+10.138.0.64: 11/06/2024 19:15:10 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+10.138.0.64: _n_gpu=1,
+10.138.0.64: adafactor=False,
+10.138.0.64: adam_beta1=0.9,
+10.138.0.64: adam_beta2=0.999,
+10.138.0.64: adam_epsilon=1e-08,
+10.138.0.64: auto_find_batch_size=False,
+10.138.0.64: bf16=False,
+10.138.0.64: bf16_full_eval=False,
+10.138.0.64: data_seed=None,
+10.138.0.64: dataloader_drop_last=False,
+10.138.0.64: dataloader_num_workers=0,
+10.138.0.64: dataloader_pin_memory=True,
+10.138.0.64: ddp_backend=None,
+10.138.0.64: ddp_broadcast_buffers=None,
+10.138.0.64: ddp_bucket_cap_mb=None,
+10.138.0.64: ddp_find_unused_parameters=None,
+10.138.0.64: ddp_timeout=1800,
+10.138.0.64: debug=[],
+10.138.0.64: deepspeed=ds_config.json,
+10.138.0.64: disable_tqdm=False,
+10.138.0.64: do_eval=False,
+10.138.0.64: do_predict=False,
+10.138.0.64: do_train=True,
+10.138.0.64: eval_accumulation_steps=None,
+10.138.0.64: eval_delay=0,
+10.138.0.64: eval_steps=None,
+10.138.0.64: evaluation_strategy=no,
+10.138.0.64: fp16=False,
+10.138.0.64: fp16_backend=auto,
+10.138.0.64: fp16_full_eval=False,
+10.138.0.64: fp16_opt_level=O1,
+10.138.0.64: fsdp=[],
+10.138.0.64: fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+10.138.0.64: fsdp_min_num_params=0,
+10.138.0.64: fsdp_transformer_layer_cls_to_wrap=None,
+10.138.0.64: full_determinism=False,
+10.138.0.64: gradient_accumulation_steps=1,
+10.138.0.64: gradient_checkpointing=False,
+10.138.0.64: greater_is_better=None,
+10.138.0.64: group_by_length=False,
+10.138.0.64: half_precision_backend=auto,
+10.138.0.64: hub_model_id=None,
+10.138.0.64: hub_private_repo=False,
+10.138.0.64: hub_strategy=every_save,
+10.138.0.64: hub_token=<HUB_TOKEN>,
+10.138.0.64: ignore_data_skip=False,
+10.138.0.64: include_inputs_for_metrics=False,
+10.138.0.64: jit_mode_eval=False,
+10.138.0.64: label_names=None,
+10.138.0.64: label_smoothing_factor=0.0,
+10.138.0.64: learning_rate=5e-05,
+10.138.0.64: length_column_name=length,
+10.138.0.64: load_best_model_at_end=False,
+10.138.0.64: local_rank=0,
+10.138.0.64: log_level=passive,
+10.138.0.64: log_level_replica=warning,
+10.138.0.64: log_on_each_node=True,
+10.138.0.64: logging_dir=output/runs/Nov06_19-15-10_pccheck-4,
+10.138.0.64: logging_first_step=False,
+10.138.0.64: logging_nan_inf_filter=True,
+10.138.0.64: logging_steps=500,
+10.138.0.64: logging_strategy=steps,
+10.138.0.64: lr_scheduler_type=linear,
+10.138.0.64: max_grad_norm=1.0,
+10.138.0.64: max_steps=-1,
+10.138.0.64: metric_for_best_model=None,
+10.138.0.64: mp_parameters=,
+10.138.0.64: no_cuda=False,
+10.138.0.64: num_train_epochs=3.0,
+10.138.0.64: optim=adamw_hf,
+10.138.0.64: optim_args=None,
+10.138.0.64: output_dir=output,
+10.138.0.64: overwrite_output_dir=False,
+10.138.0.64: past_index=-1,
+10.138.0.64: per_device_eval_batch_size=8,
+10.138.0.64: per_device_train_batch_size=1,
+10.138.0.64: prediction_loss_only=False,
+10.138.0.64: push_to_hub=False,
+10.138.0.64: push_to_hub_model_id=None,
+10.138.0.64: push_to_hub_organization=None,
+10.138.0.64: push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+10.138.0.64: ray_scope=last,
+10.138.0.64: remove_unused_columns=True,
+10.138.0.64: report_to=[],
+10.138.0.64: resume_from_checkpoint=None,
+10.138.0.64: run_name=output,
+10.138.0.64: save_on_each_node=False,
+10.138.0.64: save_safetensors=False,
+10.138.0.64: save_steps=500,
+10.138.0.64: save_strategy=steps,
+10.138.0.64: save_total_limit=None,
+10.138.0.64: seed=42,
+10.138.0.64: sharded_ddp=[],
+10.138.0.64: skip_memory_metrics=True,
+10.138.0.64: tf32=None,
+10.138.0.64: torch_compile=False,
+10.138.0.64: torch_compile_backend=None,
+10.138.0.64: torch_compile_mode=None,
+10.138.0.64: torchdynamo=None,
+10.138.0.64: tpu_metrics_debug=False,
+10.138.0.64: tpu_num_cores=None,
+10.138.0.64: use_ipex=False,
+10.138.0.64: use_legacy_prediction_loop=False,
+10.138.0.64: use_mps_device=False,
+10.138.0.64: warmup_ratio=0.0,
+10.138.0.64: warmup_steps=0,
+10.138.0.64: weight_decay=0.0,
+10.138.0.64: xpu_backend=None,
+10.138.0.64: )
+10.138.0.2: 11/06/2024 19:15:10 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+10.138.0.2: 11/06/2024 19:15:10 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+10.138.0.2: _n_gpu=1,
+10.138.0.2: adafactor=False,
+10.138.0.2: adam_beta1=0.9,
+10.138.0.2: adam_beta2=0.999,
+10.138.0.2: adam_epsilon=1e-08,
+10.138.0.2: auto_find_batch_size=False,
+10.138.0.2: bf16=False,
+10.138.0.2: bf16_full_eval=False,
+10.138.0.2: data_seed=None,
+10.138.0.2: dataloader_drop_last=False,
+10.138.0.2: dataloader_num_workers=0,
+10.138.0.2: dataloader_pin_memory=True,
+10.138.0.2: ddp_backend=None,
+10.138.0.2: ddp_broadcast_buffers=None,
+10.138.0.2: ddp_bucket_cap_mb=None,
+10.138.0.2: ddp_find_unused_parameters=None,
+10.138.0.2: ddp_timeout=1800,
+10.138.0.2: debug=[],
+10.138.0.2: deepspeed=ds_config.json,
+10.138.0.2: disable_tqdm=False,
+10.138.0.2: do_eval=False,
+10.138.0.2: do_predict=False,
+10.138.0.2: do_train=True,
+10.138.0.2: eval_accumulation_steps=None,
+10.138.0.2: eval_delay=0,
+10.138.0.2: eval_steps=None,
+10.138.0.2: evaluation_strategy=no,
+10.138.0.2: fp16=False,
+10.138.0.2: fp16_backend=auto,
+10.138.0.2: fp16_full_eval=False,
+10.138.0.2: fp16_opt_level=O1,
+10.138.0.2: fsdp=[],
+10.138.0.2: fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+10.138.0.2: fsdp_min_num_params=0,
+10.138.0.2: fsdp_transformer_layer_cls_to_wrap=None,
+10.138.0.2: full_determinism=False,
+10.138.0.2: gradient_accumulation_steps=1,
+10.138.0.2: gradient_checkpointing=False,
+10.138.0.2: greater_is_better=None,
+10.138.0.2: group_by_length=False,
+10.138.0.2: half_precision_backend=auto,
+10.138.0.2: hub_model_id=None,
+10.138.0.2: hub_private_repo=False,
+10.138.0.2: hub_strategy=every_save,
+10.138.0.2: hub_token=<HUB_TOKEN>,
+10.138.0.2: ignore_data_skip=False,
+10.138.0.2: include_inputs_for_metrics=False,
+10.138.0.2: jit_mode_eval=False,
+10.138.0.2: label_names=None,
+10.138.0.2: label_smoothing_factor=0.0,
+10.138.0.2: learning_rate=5e-05,
+10.138.0.2: length_column_name=length,
+10.138.0.2: load_best_model_at_end=False,
+10.138.0.2: local_rank=0,
+10.138.0.2: log_level=passive,
+10.138.0.2: log_level_replica=warning,
+10.138.0.2: log_on_each_node=True,
+10.138.0.2: logging_dir=output/runs/Nov06_19-15-09_pccheck-3,
+10.138.0.2: logging_first_step=False,
+10.138.0.2: logging_nan_inf_filter=True,
+10.138.0.2: logging_steps=500,
+10.138.0.2: logging_strategy=steps,
+10.138.0.2: lr_scheduler_type=linear,
+10.138.0.2: max_grad_norm=1.0,
+10.138.0.2: max_steps=-1,
+10.138.0.2: metric_for_best_model=None,
+10.138.0.2: mp_parameters=,
+10.138.0.2: no_cuda=False,
+10.138.0.2: num_train_epochs=3.0,
+10.138.0.2: optim=adamw_hf,
+10.138.0.2: optim_args=None,
+10.138.0.2: output_dir=output,
+10.138.0.2: overwrite_output_dir=False,
+10.138.0.2: past_index=-1,
+10.138.0.2: per_device_eval_batch_size=8,
+10.138.0.2: per_device_train_batch_size=1,
+10.138.0.2: prediction_loss_only=False,
+10.138.0.2: push_to_hub=False,
+10.138.0.2: push_to_hub_model_id=None,
+10.138.0.2: push_to_hub_organization=None,
+10.138.0.2: push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+10.138.0.2: ray_scope=last,
+10.138.0.2: remove_unused_columns=True,
+10.138.0.2: report_to=[],
+10.138.0.2: resume_from_checkpoint=None,
+10.138.0.2: run_name=output,
+10.138.0.2: save_on_each_node=False,
+10.138.0.2: save_safetensors=False,
+10.138.0.2: save_steps=500,
+10.138.0.2: save_strategy=steps,
+10.138.0.2: save_total_limit=None,
+10.138.0.2: seed=42,
+10.138.0.2: sharded_ddp=[],
+10.138.0.2: skip_memory_metrics=True,
+10.138.0.2: tf32=None,
+10.138.0.2: torch_compile=False,
+10.138.0.2: torch_compile_backend=None,
+10.138.0.2: torch_compile_mode=None,
+10.138.0.2: torchdynamo=None,
+10.138.0.2: tpu_metrics_debug=False,
+10.138.0.2: tpu_num_cores=None,
+10.138.0.2: use_ipex=False,
+10.138.0.2: use_legacy_prediction_loop=False,
+10.138.0.2: use_mps_device=False,
+10.138.0.2: warmup_ratio=0.0,
+10.138.0.2: warmup_steps=0,
+10.138.0.2: weight_decay=0.0,
+10.138.0.2: xpu_backend=None,
+10.138.0.2: )
+10.138.0.2: 11/06/2024 19:15:13 - INFO - datasets.builder - Using custom data configuration wikitext-2-raw-v1-31a8eb8e26a3d2e8
+10.138.0.2: 11/06/2024 19:15:13 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+10.138.0.2: 11/06/2024 19:15:13 - INFO - datasets.info - Loading Dataset info from /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+10.138.0.2: 11/06/2024 19:15:13 - INFO - datasets.builder - Found cached dataset wikitext (/home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+10.138.0.2: 11/06/2024 19:15:13 - INFO - datasets.info - Loading Dataset info from /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+10.138.0.64: 11/06/2024 19:15:14 - INFO - datasets.builder - Using custom data configuration wikitext-2-raw-v1-31a8eb8e26a3d2e8
+10.138.0.64: 11/06/2024 19:15:14 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+10.138.0.64: 11/06/2024 19:15:14 - INFO - datasets.info - Loading Dataset info from /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+10.138.0.64: 11/06/2024 19:15:14 - INFO - datasets.builder - Found cached dataset wikitext (/home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+10.138.0.64: 11/06/2024 19:15:14 - INFO - datasets.info - Loading Dataset info from /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+10.138.0.64: OPTForCausalLM(
+10.138.0.64:   (model): OPTModel(
+10.138.0.64:     (decoder): OPTDecoder(
+10.138.0.64:       (embed_tokens): Embedding(50272, 2560, padding_idx=1)
+10.138.0.64:       (embed_positions): OPTLearnedPositionalEmbedding(2050, 2560)
+10.138.0.64:       (final_layer_norm): LayerNorm((2560,), eps=1e-05, elementwise_affine=True)
+10.138.0.64:       (layers): ModuleList(
+10.138.0.64:         (0-31): 32 x OPTDecoderLayer(
+10.138.0.64:           (self_attn): OPTAttention(
+10.138.0.64:             (k_proj): Linear(in_features=2560, out_features=2560, bias=True)
+10.138.0.64:             (v_proj): Linear(in_features=2560, out_features=2560, bias=True)
+10.138.0.64:             (q_proj): Linear(in_features=2560, out_features=2560, bias=True)
+10.138.0.64:             (out_proj): Linear(in_features=2560, out_features=2560, bias=True)
+10.138.0.64:           )
+10.138.0.64:           (activation_fn): ReLU()
+10.138.0.64:           (self_attn_layer_norm): LayerNorm((2560,), eps=1e-05, elementwise_affine=True)
+10.138.0.64:           (fc1): Linear(in_features=2560, out_features=10240, bias=True)
+10.138.0.64:           (fc2): Linear(in_features=10240, out_features=2560, bias=True)
+10.138.0.64:           (final_layer_norm): LayerNorm((2560,), eps=1e-05, elementwise_affine=True)
+10.138.0.64:         )
+10.138.0.64:       )
+10.138.0.64:     )
+10.138.0.64:   )
+10.138.0.64:   (lm_head): Linear(in_features=2560, out_features=50272, bias=False)
+10.138.0.64: )
+10.138.0.64: model.decoder.embed_tokens.weight
+10.138.0.64: model.decoder.embed_positions.weight
+10.138.0.64: model.decoder.final_layer_norm.weight
+10.138.0.64: model.decoder.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.0.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.0.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.0.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.0.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.0.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.0.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.0.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.0.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.0.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.0.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.0.fc1.weight
+10.138.0.64: model.decoder.layers.0.fc1.bias
+10.138.0.64: model.decoder.layers.0.fc2.weight
+10.138.0.64: model.decoder.layers.0.fc2.bias
+10.138.0.64: model.decoder.layers.0.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.0.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.1.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.1.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.1.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.1.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.1.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.1.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.1.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.1.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.1.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.1.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.1.fc1.weight
+10.138.0.64: model.decoder.layers.1.fc1.bias
+10.138.0.64: model.decoder.layers.1.fc2.weight
+10.138.0.64: model.decoder.layers.1.fc2.bias
+10.138.0.64: model.decoder.layers.1.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.1.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.2.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.2.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.2.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.2.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.2.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.2.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.2.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.2.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.2.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.2.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.2.fc1.weight
+10.138.0.64: model.decoder.layers.2.fc1.bias
+10.138.0.64: model.decoder.layers.2.fc2.weight
+10.138.0.64: model.decoder.layers.2.fc2.bias
+10.138.0.64: model.decoder.layers.2.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.2.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.3.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.3.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.3.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.3.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.3.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.3.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.3.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.3.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.3.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.3.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.3.fc1.weight
+10.138.0.64: model.decoder.layers.3.fc1.bias
+10.138.0.64: model.decoder.layers.3.fc2.weight
+10.138.0.64: model.decoder.layers.3.fc2.bias
+10.138.0.64: model.decoder.layers.3.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.3.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.4.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.4.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.4.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.4.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.4.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.4.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.4.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.4.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.4.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.4.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.4.fc1.weight
+10.138.0.64: model.decoder.layers.4.fc1.bias
+10.138.0.64: model.decoder.layers.4.fc2.weight
+10.138.0.64: model.decoder.layers.4.fc2.bias
+10.138.0.64: model.decoder.layers.4.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.4.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.5.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.5.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.5.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.5.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.5.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.5.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.5.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.5.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.5.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.5.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.5.fc1.weight
+10.138.0.64: model.decoder.layers.5.fc1.bias
+10.138.0.64: model.decoder.layers.5.fc2.weight
+10.138.0.64: model.decoder.layers.5.fc2.bias
+10.138.0.64: model.decoder.layers.5.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.5.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.6.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.6.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.6.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.6.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.6.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.6.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.6.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.6.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.6.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.6.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.6.fc1.weight
+10.138.0.64: model.decoder.layers.6.fc1.bias
+10.138.0.64: model.decoder.layers.6.fc2.weight
+10.138.0.64: model.decoder.layers.6.fc2.bias
+10.138.0.64: model.decoder.layers.6.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.6.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.7.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.7.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.7.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.7.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.7.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.7.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.7.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.7.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.7.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.7.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.7.fc1.weight
+10.138.0.64: model.decoder.layers.7.fc1.bias
+10.138.0.64: model.decoder.layers.7.fc2.weight
+10.138.0.64: model.decoder.layers.7.fc2.bias
+10.138.0.64: model.decoder.layers.7.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.7.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.8.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.8.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.8.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.8.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.8.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.8.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.8.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.8.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.8.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.8.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.8.fc1.weight
+10.138.0.64: model.decoder.layers.8.fc1.bias
+10.138.0.64: model.decoder.layers.8.fc2.weight
+10.138.0.64: model.decoder.layers.8.fc2.bias
+10.138.0.64: model.decoder.layers.8.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.8.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.9.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.9.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.9.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.9.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.9.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.9.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.9.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.9.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.9.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.9.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.9.fc1.weight
+10.138.0.64: model.decoder.layers.9.fc1.bias
+10.138.0.64: model.decoder.layers.9.fc2.weight
+10.138.0.64: model.decoder.layers.9.fc2.bias
+10.138.0.64: model.decoder.layers.9.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.9.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.10.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.10.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.10.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.10.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.10.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.10.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.10.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.10.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.10.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.10.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.10.fc1.weight
+10.138.0.64: model.decoder.layers.10.fc1.bias
+10.138.0.64: model.decoder.layers.10.fc2.weight
+10.138.0.64: model.decoder.layers.10.fc2.bias
+10.138.0.64: model.decoder.layers.10.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.10.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.11.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.11.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.11.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.11.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.11.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.11.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.11.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.11.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.11.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.11.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.11.fc1.weight
+10.138.0.64: model.decoder.layers.11.fc1.bias
+10.138.0.64: model.decoder.layers.11.fc2.weight
+10.138.0.64: model.decoder.layers.11.fc2.bias
+10.138.0.64: model.decoder.layers.11.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.11.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.12.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.12.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.12.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.12.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.12.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.12.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.12.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.12.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.12.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.12.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.12.fc1.weight
+10.138.0.64: model.decoder.layers.12.fc1.bias
+10.138.0.64: model.decoder.layers.12.fc2.weight
+10.138.0.64: model.decoder.layers.12.fc2.bias
+10.138.0.64: model.decoder.layers.12.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.12.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.13.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.13.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.13.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.13.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.13.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.13.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.13.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.13.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.13.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.13.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.13.fc1.weight
+10.138.0.64: model.decoder.layers.13.fc1.bias
+10.138.0.64: model.decoder.layers.13.fc2.weight
+10.138.0.64: model.decoder.layers.13.fc2.bias
+10.138.0.64: model.decoder.layers.13.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.13.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.14.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.14.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.14.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.14.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.14.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.14.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.14.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.14.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.14.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.14.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.14.fc1.weight
+10.138.0.64: model.decoder.layers.14.fc1.bias
+10.138.0.64: model.decoder.layers.14.fc2.weight
+10.138.0.64: model.decoder.layers.14.fc2.bias
+10.138.0.64: model.decoder.layers.14.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.14.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.15.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.15.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.15.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.15.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.15.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.15.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.15.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.15.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.15.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.15.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.15.fc1.weight
+10.138.0.64: model.decoder.layers.15.fc1.bias
+10.138.0.64: model.decoder.layers.15.fc2.weight
+10.138.0.64: model.decoder.layers.15.fc2.bias
+10.138.0.64: model.decoder.layers.15.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.15.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.16.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.16.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.16.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.16.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.16.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.16.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.16.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.16.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.16.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.16.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.16.fc1.weight
+10.138.0.64: model.decoder.layers.16.fc1.bias
+10.138.0.64: model.decoder.layers.16.fc2.weight
+10.138.0.64: model.decoder.layers.16.fc2.bias
+10.138.0.64: model.decoder.layers.16.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.16.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.17.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.17.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.17.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.17.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.17.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.17.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.17.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.17.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.17.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.17.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.17.fc1.weight
+10.138.0.64: model.decoder.layers.17.fc1.bias
+10.138.0.64: model.decoder.layers.17.fc2.weight
+10.138.0.64: model.decoder.layers.17.fc2.bias
+10.138.0.64: model.decoder.layers.17.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.17.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.18.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.18.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.18.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.18.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.18.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.18.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.18.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.18.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.18.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.18.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.18.fc1.weight
+10.138.0.64: model.decoder.layers.18.fc1.bias
+10.138.0.64: model.decoder.layers.18.fc2.weight
+10.138.0.64: model.decoder.layers.18.fc2.bias
+10.138.0.64: model.decoder.layers.18.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.18.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.19.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.19.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.19.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.19.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.19.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.19.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.19.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.19.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.19.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.19.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.19.fc1.weight
+10.138.0.64: model.decoder.layers.19.fc1.bias
+10.138.0.64: model.decoder.layers.19.fc2.weight
+10.138.0.64: model.decoder.layers.19.fc2.bias
+10.138.0.64: model.decoder.layers.19.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.19.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.20.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.20.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.20.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.20.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.20.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.20.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.20.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.20.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.20.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.20.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.20.fc1.weight
+10.138.0.64: model.decoder.layers.20.fc1.bias
+10.138.0.64: model.decoder.layers.20.fc2.weight
+10.138.0.64: model.decoder.layers.20.fc2.bias
+10.138.0.64: model.decoder.layers.20.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.20.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.21.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.21.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.21.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.21.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.21.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.21.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.21.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.21.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.21.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.21.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.21.fc1.weight
+10.138.0.64: model.decoder.layers.21.fc1.bias
+10.138.0.64: model.decoder.layers.21.fc2.weight
+10.138.0.64: model.decoder.layers.21.fc2.bias
+10.138.0.64: model.decoder.layers.21.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.21.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.22.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.22.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.22.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.22.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.22.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.22.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.22.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.22.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.22.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.22.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.22.fc1.weight
+10.138.0.64: model.decoder.layers.22.fc1.bias
+10.138.0.64: model.decoder.layers.22.fc2.weight
+10.138.0.64: model.decoder.layers.22.fc2.bias
+10.138.0.64: model.decoder.layers.22.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.22.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.23.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.23.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.23.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.23.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.23.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.23.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.23.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.23.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.23.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.23.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.23.fc1.weight
+10.138.0.64: model.decoder.layers.23.fc1.bias
+10.138.0.64: model.decoder.layers.23.fc2.weight
+10.138.0.64: model.decoder.layers.23.fc2.bias
+10.138.0.64: model.decoder.layers.23.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.23.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.24.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.24.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.24.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.24.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.24.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.24.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.24.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.24.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.24.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.24.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.24.fc1.weight
+10.138.0.64: model.decoder.layers.24.fc1.bias
+10.138.0.64: model.decoder.layers.24.fc2.weight
+10.138.0.64: model.decoder.layers.24.fc2.bias
+10.138.0.64: model.decoder.layers.24.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.24.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.25.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.25.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.25.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.25.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.25.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.25.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.25.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.25.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.25.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.25.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.25.fc1.weight
+10.138.0.64: model.decoder.layers.25.fc1.bias
+10.138.0.64: model.decoder.layers.25.fc2.weight
+10.138.0.64: model.decoder.layers.25.fc2.bias
+10.138.0.64: model.decoder.layers.25.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.25.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.26.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.26.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.26.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.26.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.26.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.26.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.26.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.26.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.26.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.26.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.26.fc1.weight
+10.138.0.64: model.decoder.layers.26.fc1.bias
+10.138.0.64: model.decoder.layers.26.fc2.weight
+10.138.0.64: model.decoder.layers.26.fc2.bias
+10.138.0.64: model.decoder.layers.26.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.26.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.27.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.27.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.27.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.27.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.27.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.27.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.27.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.27.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.27.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.27.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.27.fc1.weight
+10.138.0.64: model.decoder.layers.27.fc1.bias
+10.138.0.64: model.decoder.layers.27.fc2.weight
+10.138.0.64: model.decoder.layers.27.fc2.bias
+10.138.0.64: model.decoder.layers.27.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.27.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.28.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.28.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.28.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.28.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.28.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.28.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.28.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.28.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.28.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.28.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.28.fc1.weight
+10.138.0.64: model.decoder.layers.28.fc1.bias
+10.138.0.64: model.decoder.layers.28.fc2.weight
+10.138.0.64: model.decoder.layers.28.fc2.bias
+10.138.0.64: model.decoder.layers.28.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.28.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.29.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.29.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.29.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.29.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.29.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.29.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.29.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.29.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.29.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.29.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.29.fc1.weight
+10.138.0.64: model.decoder.layers.29.fc1.bias
+10.138.0.64: model.decoder.layers.29.fc2.weight
+10.138.0.64: model.decoder.layers.29.fc2.bias
+10.138.0.64: model.decoder.layers.29.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.29.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.30.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.30.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.30.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.30.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.30.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.30.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.30.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.30.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.30.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.30.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.30.fc1.weight
+10.138.0.64: model.decoder.layers.30.fc1.bias
+10.138.0.64: model.decoder.layers.30.fc2.weight
+10.138.0.64: model.decoder.layers.30.fc2.bias
+10.138.0.64: model.decoder.layers.30.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.30.final_layer_norm.bias
+10.138.0.64: model.decoder.layers.31.self_attn.k_proj.weight
+10.138.0.64: model.decoder.layers.31.self_attn.k_proj.bias
+10.138.0.64: model.decoder.layers.31.self_attn.v_proj.weight
+10.138.0.64: model.decoder.layers.31.self_attn.v_proj.bias
+10.138.0.64: model.decoder.layers.31.self_attn.q_proj.weight
+10.138.0.64: model.decoder.layers.31.self_attn.q_proj.bias
+10.138.0.64: model.decoder.layers.31.self_attn.out_proj.weight
+10.138.0.64: model.decoder.layers.31.self_attn.out_proj.bias
+10.138.0.64: model.decoder.layers.31.self_attn_layer_norm.weight
+10.138.0.64: model.decoder.layers.31.self_attn_layer_norm.bias
+10.138.0.64: model.decoder.layers.31.fc1.weight
+10.138.0.64: model.decoder.layers.31.fc1.bias
+10.138.0.64: model.decoder.layers.31.fc2.weight
+10.138.0.64: model.decoder.layers.31.fc2.bias
+10.138.0.64: model.decoder.layers.31.final_layer_norm.weight
+10.138.0.64: model.decoder.layers.31.final_layer_norm.bias
+10.138.0.64: lm_head.weight
+10.138.0.2: OPTForCausalLM(
+10.138.0.2:   (model): OPTModel(
+10.138.0.2:     (decoder): OPTDecoder(
+10.138.0.2:       (embed_tokens): Embedding(50272, 2560, padding_idx=1)
+10.138.0.2:       (embed_positions): OPTLearnedPositionalEmbedding(2050, 2560)
+10.138.0.2:       (final_layer_norm): LayerNorm((2560,), eps=1e-05, elementwise_affine=True)
+10.138.0.2:       (layers): ModuleList(
+10.138.0.2:         (0-31): 32 x OPTDecoderLayer(
+10.138.0.2:           (self_attn): OPTAttention(
+10.138.0.2:             (k_proj): Linear(in_features=2560, out_features=2560, bias=True)
+10.138.0.2:             (v_proj): Linear(in_features=2560, out_features=2560, bias=True)
+10.138.0.2:             (q_proj): Linear(in_features=2560, out_features=2560, bias=True)
+10.138.0.2:             (out_proj): Linear(in_features=2560, out_features=2560, bias=True)
+10.138.0.2:           )
+10.138.0.2:           (activation_fn): ReLU()
+10.138.0.2:           (self_attn_layer_norm): LayerNorm((2560,), eps=1e-05, elementwise_affine=True)
+10.138.0.2:           (fc1): Linear(in_features=2560, out_features=10240, bias=True)
+10.138.0.2:           (fc2): Linear(in_features=10240, out_features=2560, bias=True)
+10.138.0.2:           (final_layer_norm): LayerNorm((2560,), eps=1e-05, elementwise_affine=True)
+10.138.0.2:         )
+10.138.0.2:       )
+10.138.0.2:     )
+10.138.0.2:   )
+10.138.0.2:   (lm_head): Linear(in_features=2560, out_features=50272, bias=False)
+10.138.0.2: )
+10.138.0.2: model.decoder.embed_tokens.weight
+10.138.0.2: model.decoder.embed_positions.weight
+10.138.0.2: model.decoder.final_layer_norm.weight
+10.138.0.2: model.decoder.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.0.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.0.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.0.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.0.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.0.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.0.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.0.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.0.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.0.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.0.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.0.fc1.weight
+10.138.0.2: model.decoder.layers.0.fc1.bias
+10.138.0.2: model.decoder.layers.0.fc2.weight
+10.138.0.2: model.decoder.layers.0.fc2.bias
+10.138.0.2: model.decoder.layers.0.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.0.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.1.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.1.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.1.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.1.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.1.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.1.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.1.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.1.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.1.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.1.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.1.fc1.weight
+10.138.0.2: model.decoder.layers.1.fc1.bias
+10.138.0.2: model.decoder.layers.1.fc2.weight
+10.138.0.2: model.decoder.layers.1.fc2.bias
+10.138.0.2: model.decoder.layers.1.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.1.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.2.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.2.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.2.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.2.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.2.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.2.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.2.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.2.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.2.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.2.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.2.fc1.weight
+10.138.0.2: model.decoder.layers.2.fc1.bias
+10.138.0.2: model.decoder.layers.2.fc2.weight
+10.138.0.2: model.decoder.layers.2.fc2.bias
+10.138.0.2: model.decoder.layers.2.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.2.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.3.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.3.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.3.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.3.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.3.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.3.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.3.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.3.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.3.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.3.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.3.fc1.weight
+10.138.0.2: model.decoder.layers.3.fc1.bias
+10.138.0.2: model.decoder.layers.3.fc2.weight
+10.138.0.2: model.decoder.layers.3.fc2.bias
+10.138.0.2: model.decoder.layers.3.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.3.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.4.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.4.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.4.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.4.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.4.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.4.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.4.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.4.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.4.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.4.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.4.fc1.weight
+10.138.0.2: model.decoder.layers.4.fc1.bias
+10.138.0.2: model.decoder.layers.4.fc2.weight
+10.138.0.2: model.decoder.layers.4.fc2.bias
+10.138.0.2: model.decoder.layers.4.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.4.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.5.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.5.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.5.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.5.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.5.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.5.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.5.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.5.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.5.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.5.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.5.fc1.weight
+10.138.0.2: model.decoder.layers.5.fc1.bias
+10.138.0.2: model.decoder.layers.5.fc2.weight
+10.138.0.2: model.decoder.layers.5.fc2.bias
+10.138.0.2: model.decoder.layers.5.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.5.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.6.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.6.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.6.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.6.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.6.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.6.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.6.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.6.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.6.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.6.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.6.fc1.weight
+10.138.0.2: model.decoder.layers.6.fc1.bias
+10.138.0.2: model.decoder.layers.6.fc2.weight
+10.138.0.2: model.decoder.layers.6.fc2.bias
+10.138.0.2: model.decoder.layers.6.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.6.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.7.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.7.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.7.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.7.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.7.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.7.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.7.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.7.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.7.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.7.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.7.fc1.weight
+10.138.0.2: model.decoder.layers.7.fc1.bias
+10.138.0.2: model.decoder.layers.7.fc2.weight
+10.138.0.2: model.decoder.layers.7.fc2.bias
+10.138.0.2: model.decoder.layers.7.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.7.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.8.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.8.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.8.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.8.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.8.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.8.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.8.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.8.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.8.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.8.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.8.fc1.weight
+10.138.0.2: model.decoder.layers.8.fc1.bias
+10.138.0.2: model.decoder.layers.8.fc2.weight
+10.138.0.2: model.decoder.layers.8.fc2.bias
+10.138.0.2: model.decoder.layers.8.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.8.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.9.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.9.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.9.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.9.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.9.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.9.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.9.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.9.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.9.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.9.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.9.fc1.weight
+10.138.0.2: model.decoder.layers.9.fc1.bias
+10.138.0.2: model.decoder.layers.9.fc2.weight
+10.138.0.2: model.decoder.layers.9.fc2.bias
+10.138.0.2: model.decoder.layers.9.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.9.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.10.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.10.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.10.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.10.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.10.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.10.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.10.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.10.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.10.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.10.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.10.fc1.weight
+10.138.0.2: model.decoder.layers.10.fc1.bias
+10.138.0.2: model.decoder.layers.10.fc2.weight
+10.138.0.2: model.decoder.layers.10.fc2.bias
+10.138.0.2: model.decoder.layers.10.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.10.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.11.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.11.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.11.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.11.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.11.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.11.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.11.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.11.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.11.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.11.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.11.fc1.weight
+10.138.0.2: model.decoder.layers.11.fc1.bias
+10.138.0.2: model.decoder.layers.11.fc2.weight
+10.138.0.2: model.decoder.layers.11.fc2.bias
+10.138.0.2: model.decoder.layers.11.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.11.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.12.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.12.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.12.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.12.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.12.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.12.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.12.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.12.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.12.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.12.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.12.fc1.weight
+10.138.0.2: model.decoder.layers.12.fc1.bias
+10.138.0.2: model.decoder.layers.12.fc2.weight
+10.138.0.2: model.decoder.layers.12.fc2.bias
+10.138.0.2: model.decoder.layers.12.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.12.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.13.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.13.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.13.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.13.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.13.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.13.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.13.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.13.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.13.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.13.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.13.fc1.weight
+10.138.0.2: model.decoder.layers.13.fc1.bias
+10.138.0.2: model.decoder.layers.13.fc2.weight
+10.138.0.2: model.decoder.layers.13.fc2.bias
+10.138.0.2: model.decoder.layers.13.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.13.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.14.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.14.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.14.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.14.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.14.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.14.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.14.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.14.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.14.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.14.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.14.fc1.weight
+10.138.0.2: model.decoder.layers.14.fc1.bias
+10.138.0.2: model.decoder.layers.14.fc2.weight
+10.138.0.2: model.decoder.layers.14.fc2.bias
+10.138.0.2: model.decoder.layers.14.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.14.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.15.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.15.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.15.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.15.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.15.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.15.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.15.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.15.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.15.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.15.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.15.fc1.weight
+10.138.0.2: model.decoder.layers.15.fc1.bias
+10.138.0.2: model.decoder.layers.15.fc2.weight
+10.138.0.2: model.decoder.layers.15.fc2.bias
+10.138.0.2: model.decoder.layers.15.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.15.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.16.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.16.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.16.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.16.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.16.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.16.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.16.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.16.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.16.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.16.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.16.fc1.weight
+10.138.0.2: model.decoder.layers.16.fc1.bias
+10.138.0.2: model.decoder.layers.16.fc2.weight
+10.138.0.2: model.decoder.layers.16.fc2.bias
+10.138.0.2: model.decoder.layers.16.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.16.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.17.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.17.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.17.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.17.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.17.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.17.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.17.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.17.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.17.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.17.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.17.fc1.weight
+10.138.0.2: model.decoder.layers.17.fc1.bias
+10.138.0.2: model.decoder.layers.17.fc2.weight
+10.138.0.2: model.decoder.layers.17.fc2.bias
+10.138.0.2: model.decoder.layers.17.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.17.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.18.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.18.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.18.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.18.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.18.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.18.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.18.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.18.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.18.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.18.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.18.fc1.weight
+10.138.0.2: model.decoder.layers.18.fc1.bias
+10.138.0.2: model.decoder.layers.18.fc2.weight
+10.138.0.2: model.decoder.layers.18.fc2.bias
+10.138.0.2: model.decoder.layers.18.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.18.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.19.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.19.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.19.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.19.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.19.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.19.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.19.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.19.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.19.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.19.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.19.fc1.weight
+10.138.0.2: model.decoder.layers.19.fc1.bias
+10.138.0.2: model.decoder.layers.19.fc2.weight
+10.138.0.2: model.decoder.layers.19.fc2.bias
+10.138.0.2: model.decoder.layers.19.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.19.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.20.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.20.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.20.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.20.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.20.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.20.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.20.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.20.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.20.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.20.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.20.fc1.weight
+10.138.0.2: model.decoder.layers.20.fc1.bias
+10.138.0.2: model.decoder.layers.20.fc2.weight
+10.138.0.2: model.decoder.layers.20.fc2.bias
+10.138.0.2: model.decoder.layers.20.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.20.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.21.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.21.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.21.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.21.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.21.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.21.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.21.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.21.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.21.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.21.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.21.fc1.weight
+10.138.0.2: model.decoder.layers.21.fc1.bias
+10.138.0.2: model.decoder.layers.21.fc2.weight
+10.138.0.2: model.decoder.layers.21.fc2.bias
+10.138.0.2: model.decoder.layers.21.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.21.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.22.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.22.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.22.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.22.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.22.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.22.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.22.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.22.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.22.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.22.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.22.fc1.weight
+10.138.0.2: model.decoder.layers.22.fc1.bias
+10.138.0.2: model.decoder.layers.22.fc2.weight
+10.138.0.2: model.decoder.layers.22.fc2.bias
+10.138.0.2: model.decoder.layers.22.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.22.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.23.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.23.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.23.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.23.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.23.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.23.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.23.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.23.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.23.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.23.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.23.fc1.weight
+10.138.0.2: model.decoder.layers.23.fc1.bias
+10.138.0.2: model.decoder.layers.23.fc2.weight
+10.138.0.2: model.decoder.layers.23.fc2.bias
+10.138.0.2: model.decoder.layers.23.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.23.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.24.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.24.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.24.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.24.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.24.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.24.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.24.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.24.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.24.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.24.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.24.fc1.weight
+10.138.0.2: model.decoder.layers.24.fc1.bias
+10.138.0.2: model.decoder.layers.24.fc2.weight
+10.138.0.2: model.decoder.layers.24.fc2.bias
+10.138.0.2: model.decoder.layers.24.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.24.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.25.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.25.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.25.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.25.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.25.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.25.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.25.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.25.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.25.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.25.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.25.fc1.weight
+10.138.0.2: model.decoder.layers.25.fc1.bias
+10.138.0.2: model.decoder.layers.25.fc2.weight
+10.138.0.2: model.decoder.layers.25.fc2.bias
+10.138.0.2: model.decoder.layers.25.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.25.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.26.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.26.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.26.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.26.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.26.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.26.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.26.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.26.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.26.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.26.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.26.fc1.weight
+10.138.0.2: model.decoder.layers.26.fc1.bias
+10.138.0.2: model.decoder.layers.26.fc2.weight
+10.138.0.2: model.decoder.layers.26.fc2.bias
+10.138.0.2: model.decoder.layers.26.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.26.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.27.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.27.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.27.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.27.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.27.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.27.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.27.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.27.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.27.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.27.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.27.fc1.weight
+10.138.0.2: model.decoder.layers.27.fc1.bias
+10.138.0.2: model.decoder.layers.27.fc2.weight
+10.138.0.2: model.decoder.layers.27.fc2.bias
+10.138.0.2: model.decoder.layers.27.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.27.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.28.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.28.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.28.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.28.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.28.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.28.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.28.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.28.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.28.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.28.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.28.fc1.weight
+10.138.0.2: model.decoder.layers.28.fc1.bias
+10.138.0.2: model.decoder.layers.28.fc2.weight
+10.138.0.2: model.decoder.layers.28.fc2.bias
+10.138.0.2: model.decoder.layers.28.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.28.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.29.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.29.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.29.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.29.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.29.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.29.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.29.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.29.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.29.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.29.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.29.fc1.weight
+10.138.0.2: model.decoder.layers.29.fc1.bias
+10.138.0.2: model.decoder.layers.29.fc2.weight
+10.138.0.2: model.decoder.layers.29.fc2.bias
+10.138.0.2: model.decoder.layers.29.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.29.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.30.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.30.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.30.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.30.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.30.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.30.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.30.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.30.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.30.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.30.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.30.fc1.weight
+10.138.0.2: model.decoder.layers.30.fc1.bias
+10.138.0.2: model.decoder.layers.30.fc2.weight
+10.138.0.2: model.decoder.layers.30.fc2.bias
+10.138.0.2: model.decoder.layers.30.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.30.final_layer_norm.bias
+10.138.0.2: model.decoder.layers.31.self_attn.k_proj.weight
+10.138.0.2: model.decoder.layers.31.self_attn.k_proj.bias
+10.138.0.2: model.decoder.layers.31.self_attn.v_proj.weight
+10.138.0.2: model.decoder.layers.31.self_attn.v_proj.bias
+10.138.0.2: model.decoder.layers.31.self_attn.q_proj.weight
+10.138.0.2: model.decoder.layers.31.self_attn.q_proj.bias
+10.138.0.2: model.decoder.layers.31.self_attn.out_proj.weight
+10.138.0.2: model.decoder.layers.31.self_attn.out_proj.bias
+10.138.0.2: model.decoder.layers.31.self_attn_layer_norm.weight
+10.138.0.2: model.decoder.layers.31.self_attn_layer_norm.bias
+10.138.0.2: model.decoder.layers.31.fc1.weight
+10.138.0.2: model.decoder.layers.31.fc1.bias
+10.138.0.2: model.decoder.layers.31.fc2.weight
+10.138.0.2: model.decoder.layers.31.fc2.bias
+10.138.0.2: model.decoder.layers.31.final_layer_norm.weight
+10.138.0.2: model.decoder.layers.31.final_layer_norm.bias
+10.138.0.2: lm_head.weight
+10.138.0.2: SEED_LAYERS=False BASE_SEED=1234 SEED_FN=None
+10.138.0.2: Using topology: {ProcessCoord(pipe=0, data=0): 0, ProcessCoord(pipe=1, data=0): 1}
+10.138.0.2: [2024-11-06 19:15:42,775] [INFO] [module.py:375:_partition_layers] Partitioning pipeline stages with method parameters
+10.138.0.2: stage=0 layers=17
+10.138.0.2:      0: GPTEmbeddings
+10.138.0.2:      1: GPTBlock
+10.138.0.2:      2: GPTBlock
+10.138.0.2:      3: GPTBlock
+10.138.0.2:      4: GPTBlock
+10.138.0.2:      5: GPTBlock
+10.138.0.2:      6: GPTBlock
+10.138.0.2:      7: GPTBlock
+10.138.0.2:      8: GPTBlock
+10.138.0.2:      9: GPTBlock
+10.138.0.2:     10: GPTBlock
+10.138.0.2:     11: GPTBlock
+10.138.0.2:     12: GPTBlock
+10.138.0.2:     13: GPTBlock
+10.138.0.2:     14: GPTBlock
+10.138.0.2:     15: GPTBlock
+10.138.0.2:     16: GPTBlock
+10.138.0.2: stage=1 layers=17
+10.138.0.2:     17: GPTBlock
+10.138.0.2:     18: GPTBlock
+10.138.0.2:     19: GPTBlock
+10.138.0.2:     20: GPTBlock
+10.138.0.2:     21: GPTBlock
+10.138.0.2:     22: GPTBlock
+10.138.0.2:     23: GPTBlock
+10.138.0.2:     24: GPTBlock
+10.138.0.2:     25: GPTBlock
+10.138.0.2:     26: GPTBlock
+10.138.0.2:     27: GPTBlock
+10.138.0.2:     28: GPTBlock
+10.138.0.2:     29: GPTBlock
+10.138.0.2:     30: GPTBlock
+10.138.0.2:     31: GPTBlock
+10.138.0.2:     32: GPTBlock
+10.138.0.2:     33: GPTLMHead
+10.138.0.2:   loss: LMLoss
+10.138.0.64: 11/06/2024 19:16:12 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-4bb7e43db235d9eb.arrow
+10.138.0.64: 11/06/2024 19:16:12 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e559717168a86996.arrow
+10.138.0.64: 11/06/2024 19:16:12 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-70fc2b3e8f8b9812.arrow
+10.138.0.2: 11/06/2024 19:16:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-4bb7e43db235d9eb.arrow
+10.138.0.2: 11/06/2024 19:16:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e559717168a86996.arrow
+10.138.0.2: 11/06/2024 19:16:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-70fc2b3e8f8b9812.arrow
+10.138.0.2: 11/06/2024 19:16:21 - WARNING - __main__ - The chosen tokenizer supports a `model_max_length` that is longer than the default `block_size` value of 1024. If you would like to use a longer `block_size` up to `tokenizer.model_max_length` you can override this default with `--block_size xxx`.
+10.138.0.64: 11/06/2024 19:16:21 - WARNING - __main__ - The chosen tokenizer supports a `model_max_length` that is longer than the default `block_size` value of 1024. If you would like to use a longer `block_size` up to `tokenizer.model_max_length` you can override this default with `--block_size xxx`.
+10.138.0.2: 11/06/2024 19:16:21 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-04f4cc0ed4310910.arrow
+10.138.0.64: 11/06/2024 19:16:21 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-04f4cc0ed4310910.arrow
+10.138.0.2: 11/06/2024 19:16:21 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-21f3a5101b68e1f1.arrow
+10.138.0.64: 11/06/2024 19:16:21 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-21f3a5101b68e1f1.arrow
+10.138.0.2: 11/06/2024 19:16:21 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-0b2ea0455ae74d8c.arrow
+10.138.0.64: 11/06/2024 19:16:21 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/fot/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1-31a8eb8e26a3d2e8/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-0b2ea0455ae74d8c.arrow
+10.138.0.2: [2024-11-06 19:16:21,234] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.12.6, git-hash=unknown, git-branch=unknown
+10.138.0.64: -------------------- checkp_type is Gemini
+10.138.0.2: -------------------- checkp_type is Gemini
+10.138.0.2: [2024-11-06 19:16:21,330] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+10.138.0.64: ninja: no work to do.
+10.138.0.64: Time to load fused_adam op: 1.0726499557495117 seconds
+10.138.0.2: ninja: no work to do.
+10.138.0.2: Time to load fused_adam op: 1.0451412200927734 seconds
+10.138.0.2: [2024-11-06 19:16:23,674] [INFO] [logging.py:96:log_dist] [Rank 0] Using DeepSpeed Optimizer param name adamw as basic optimizer
+10.138.0.2: [2024-11-06 19:16:23,674] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+10.138.0.2: [2024-11-06 19:16:23,691] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = FusedAdam
+10.138.0.2: [2024-11-06 19:16:23,692] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = adamw
+10.138.0.2: [2024-11-06 19:16:23,692] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+10.138.0.2: [2024-11-06 19:16:23,692] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = None
+10.138.0.2: [2024-11-06 19:16:23,692] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[1e-05], mom=[[0.9, 0.999]]
+10.138.0.2: [2024-11-06 19:16:23,693] [INFO] [config.py:984:print] DeepSpeedEngine configuration:
+10.138.0.2: [2024-11-06 19:16:23,693] [INFO] [config.py:988:print]   activation_checkpointing_config  {
+10.138.0.2:     "partition_activations": false, 
+10.138.0.2:     "contiguous_memory_optimization": false, 
+10.138.0.2:     "cpu_checkpointing": false, 
+10.138.0.2:     "number_checkpoints": null, 
+10.138.0.2:     "synchronize_checkpoint_boundary": false, 
+10.138.0.2:     "profile": false
+10.138.0.2: }
+10.138.0.2: [2024-11-06 19:16:23,693] [INFO] [config.py:988:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+10.138.0.2: [2024-11-06 19:16:23,693] [INFO] [config.py:988:print]   amp_enabled .................. False
+10.138.0.2: [2024-11-06 19:16:23,694] [INFO] [config.py:988:print]   amp_params ................... False
+10.138.0.2: [2024-11-06 19:16:23,694] [INFO] [config.py:988:print]   autotuning_config ............ {
+10.138.0.2:     "enabled": false, 
+10.138.0.2:     "start_step": null, 
+10.138.0.2:     "end_step": null, 
+10.138.0.2:     "metric_path": null, 
+10.138.0.2:     "arg_mappings": null, 
+10.138.0.2:     "metric": "throughput", 
+10.138.0.2:     "model_info": null, 
+10.138.0.2:     "results_dir": "autotuning_results", 
+10.138.0.2:     "exps_dir": "autotuning_exps", 
+10.138.0.2:     "overwrite": true, 
+10.138.0.2:     "fast": true, 
+10.138.0.2:     "start_profile_step": 3, 
+10.138.0.2:     "end_profile_step": 5, 
+10.138.0.2:     "tuner_type": "gridsearch", 
+10.138.0.2:     "tuner_early_stopping": 5, 
+10.138.0.2:     "tuner_num_trials": 50, 
+10.138.0.2:     "model_info_path": null, 
+10.138.0.2:     "mp_size": 1, 
+10.138.0.2:     "max_train_batch_size": null, 
+10.138.0.2:     "min_train_batch_size": 1, 
+10.138.0.2:     "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+10.138.0.2:     "min_train_micro_batch_size_per_gpu": 1, 
+10.138.0.2:     "num_tuning_micro_batch_sizes": 3
+10.138.0.2: }
+10.138.0.2: [2024-11-06 19:16:23,694] [INFO] [config.py:988:print]   bfloat16_enabled ............. False
+10.138.0.2: [2024-11-06 19:16:23,694] [INFO] [config.py:988:print]   checkpoint_parallel_write_pipeline  False
+10.138.0.2: [2024-11-06 19:16:23,694] [INFO] [config.py:988:print]   checkpoint_tag_validation_enabled  True
+10.138.0.2: [2024-11-06 19:16:23,694] [INFO] [config.py:988:print]   checkpoint_tag_validation_fail  False
+10.138.0.2: [2024-11-06 19:16:23,694] [INFO] [config.py:988:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7f8cc1cb0070>
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   communication_data_type ...... None
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   curriculum_enabled_legacy .... False
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   curriculum_params_legacy ..... False
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   data_efficiency_enabled ...... False
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   dataloader_drop_last ......... False
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   disable_allgather ............ False
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   dump_state ................... False
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   dynamic_loss_scale_args ...... None
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   eigenvalue_enabled ........... False
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   eigenvalue_gas_boundary_resolution  1
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   eigenvalue_layer_name ........ bert.encoder.layer
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   eigenvalue_layer_num ......... 0
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   eigenvalue_max_iter .......... 100
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   eigenvalue_stability ......... 1e-06
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   eigenvalue_tol ............... 0.01
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   eigenvalue_verbose ........... False
+10.138.0.2: [2024-11-06 19:16:23,695] [INFO] [config.py:988:print]   elasticity_enabled ........... False
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   flops_profiler_config ........ {
+10.138.0.2:     "enabled": false, 
+10.138.0.2:     "recompute_fwd_factor": 0.0, 
+10.138.0.2:     "profile_step": 1, 
+10.138.0.2:     "module_depth": -1, 
+10.138.0.2:     "top_modules": 1, 
+10.138.0.2:     "detailed": true, 
+10.138.0.2:     "output_file": null
+10.138.0.2: }
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   fp16_auto_cast ............... None
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   fp16_enabled ................. False
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   fp16_master_weights_and_gradients  False
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   global_rank .................. 0
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   grad_accum_dtype ............. None
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   gradient_accumulation_steps .. 1
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   gradient_clipping ............ 0.0
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   gradient_predivide_factor .... 1.0
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   graph_harvesting ............. False
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   initial_dynamic_scale ........ 65536
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   load_universal_checkpoint .... False
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   loss_scale ................... 0
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   memory_breakdown ............. False
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   mics_hierarchial_params_gather  False
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   mics_shard_size .............. -1
+10.138.0.2: [2024-11-06 19:16:23,696] [INFO] [config.py:988:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   nebula_config ................ {
+10.138.0.2:     "enabled": false, 
+10.138.0.2:     "persistent_storage_path": null, 
+10.138.0.2:     "persistent_time_interval": 100, 
+10.138.0.2:     "num_of_version_in_retention": 2, 
+10.138.0.2:     "enable_nebula_load": true, 
+10.138.0.2:     "load_path": null
+10.138.0.2: }
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   optimizer_legacy_fusion ...... False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   optimizer_name ............... adamw
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   optimizer_params ............. {'lr': 1e-05, 'betas': [0.9, 0.999], 'eps': 1e-08, 'weight_decay': 4e-05}
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   pld_enabled .................. False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   pld_params ................... False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   prescale_gradients ........... False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   scheduler_name ............... None
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   scheduler_params ............. None
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   seq_parallel_communication_data_type  torch.float32
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   sparse_attention ............. None
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   sparse_gradients_enabled ..... False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   steps_per_print .............. 10
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   train_batch_size ............. 1
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   train_micro_batch_size_per_gpu  1
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   use_data_before_expert_parallel_  False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   use_node_local_storage ....... False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   wall_clock_breakdown ......... False
+10.138.0.2: [2024-11-06 19:16:23,697] [INFO] [config.py:988:print]   weight_quantization_config ... None
+10.138.0.2: [2024-11-06 19:16:23,698] [INFO] [config.py:988:print]   world_size ................... 1
+10.138.0.2: [2024-11-06 19:16:23,698] [INFO] [config.py:988:print]   zero_allow_untested_optimizer  False
+10.138.0.2: [2024-11-06 19:16:23,698] [INFO] [config.py:988:print]   zero_config .................. stage=0 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500,000,000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500,000,000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1,000,000,000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50,000,000 param_persistence_threshold=100,000 model_persistence_threshold=sys.maxsize max_live_parameters=1,000,000,000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+10.138.0.2: [2024-11-06 19:16:23,698] [INFO] [config.py:988:print]   zero_enabled ................. False
+10.138.0.2: [2024-11-06 19:16:23,698] [INFO] [config.py:988:print]   zero_force_ds_cpu_optimizer .. True
+10.138.0.2: [2024-11-06 19:16:23,698] [INFO] [config.py:988:print]   zero_optimization_stage ...... 0
+10.138.0.2: [2024-11-06 19:16:23,698] [INFO] [config.py:974:print_user_config]   json = {
+10.138.0.2:     "train_batch_size": 1, 
+10.138.0.2:     "train_micro_batch_size_per_gpu": 1, 
+10.138.0.2:     "gradient_accumulation_steps": 1, 
+10.138.0.2:     "zero_optimization": {
+10.138.0.2:     }, 
+10.138.0.2:     "wall_clock_breakdown": false, 
+10.138.0.2:     "optimizer": {
+10.138.0.2:         "type": "AdamW", 
+10.138.0.2:         "params": {
+10.138.0.2:             "lr": 1e-05, 
+10.138.0.2:             "betas": [0.9, 0.999], 
+10.138.0.2:             "eps": 1e-08, 
+10.138.0.2:             "weight_decay": 4e-05
+10.138.0.2:         }
+10.138.0.2:     }
+10.138.0.2: }
+10.138.0.2: [2024-11-06 19:16:23,698] [INFO] [engine.py:99:__init__] CONFIG: micro_batches=1 micro_batch_size=1
+10.138.0.64: [2024-11-06 19:16:27,559] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+10.138.0.2: [2024-11-06 19:16:27,764] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+10.138.0.64: [2024-11-06 19:16:31,946] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+10.138.0.2: [2024-11-06 19:16:32,199] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+10.138.0.64: [2024-11-06 19:16:32,389] [INFO] [engine.py:139:__init__] is_pipe_partitioned= False is_grad_partitioned= False
+10.138.0.2: [2024-11-06 19:16:32,648] [INFO] [engine.py:139:__init__] is_pipe_partitioned= False is_grad_partitioned= False
+10.138.0.2: [2024-11-06 19:16:33,106] [INFO] [engine.py:158:__init__] RANK=0 STAGE=0 LAYERS=17 [0, 17) STAGE_PARAMS=1392768000 (1392.768M) TOTAL_PARAMS=2780293120 (2780.293M) UNIQUE_PARAMS=2780293120 (2780.293M)
+10.138.0.64: [2024-11-06 19:16:33,106] [INFO] [engine.py:158:__init__] RANK=1 STAGE=1 LAYERS=17 [17, 34) STAGE_PARAMS=1387525120 (1387.525M) TOTAL_PARAMS=2780293120 (2780.293M) UNIQUE_PARAMS=2780293120 (2780.293M)
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.2: Step 0 took 3.352309226989746 sec
+10.138.0.64: Step 0 took 3.349761962890625 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 1 took 1.050839900970459 sec
+10.138.0.2: Step 1 took 2.5171501636505127 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 2 took 2.522040605545044 sec
+10.138.0.2: Step 2 took 2.5150232315063477 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Start clock!
+10.138.0.64: Step 3 took 2.5142126083374023 sec
+10.138.0.2: Start clock!
+10.138.0.2: Step 3 took 2.516054391860962 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 4 took 2.51123309135437 sec
+10.138.0.2: Step 4 took 2.5086076259613037 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 5 took 2.508634328842163 sec
+10.138.0.2: Step 5 took 2.509096384048462 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 6 took 2.505387306213379 sec
+10.138.0.2: Step 6 took 2.5031604766845703 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 7 took 2.5068933963775635 sec
+10.138.0.2: Step 7 took 2.5088424682617188 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 8 took 2.506042718887329 sec
+10.138.0.2: Step 8 took 2.5089621543884277 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 9 took 3.080373525619507 sec
+10.138.0.2: [2024-11-06 19:16:58,946] [INFO] [logging.py:96:log_dist] [Rank 0] step=10, skipped=0, lr=[1e-05], mom=[[0.9, 0.999]]
+10.138.0.2: steps: 10 loss: 6.2123 iter time (s): 2.594 samples/sec: 0.385
+10.138.0.2: Step 9 took 2.51162052154541 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 10 took 1.940603494644165 sec
+10.138.0.2: Step 10 took 2.506941318511963 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 11 took 2.5058436393737793 sec
+10.138.0.2: Step 11 took 2.5116512775421143 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 12 took 2.525611162185669 sec
+10.138.0.2: Step 12 took 2.521012306213379 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 13 took 2.5105366706848145 sec
+10.138.0.2: Step 13 took 2.510565996170044 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 14 took 2.506922960281372 sec
+10.138.0.2: Step 14 took 2.5096330642700195 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 15 took 2.5097012519836426 sec
+10.138.0.2: Step 15 took 2.506732702255249 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 16 took 2.5091662406921387 sec
+10.138.0.2: Step 16 took 2.505720853805542 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 17 took 2.5063490867614746 sec
+10.138.0.2: Step 17 took 2.5060625076293945 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 18 took 2.5046498775482178 sec
+10.138.0.2: Step 18 took 2.504828453063965 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 19 took 3.0804245471954346 sec
+10.138.0.2: [2024-11-06 19:17:24,045] [INFO] [logging.py:96:log_dist] [Rank 0] step=20, skipped=0, lr=[1e-05], mom=[[0.9, 0.999]]
+10.138.0.2: steps: 20 loss: 5.3639 iter time (s): 2.509 samples/sec: 0.399
+10.138.0.2: Step 19 took 2.5156750679016113 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 20 took 1.9459223747253418 sec
+10.138.0.2: Step 20 took 2.5199742317199707 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 21 took 2.5144104957580566 sec
+10.138.0.2: Step 21 took 2.5072174072265625 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 22 took 2.5091826915740967 sec
+10.138.0.2: Step 22 took 2.5072274208068848 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 23 took 2.511415719985962 sec
+10.138.0.2: Step 23 took 2.516742467880249 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 24 took 2.5148136615753174 sec
+10.138.0.2: Step 24 took 2.518589496612549 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 25 took 2.5159318447113037 sec
+10.138.0.2: Step 25 took 2.5102438926696777 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 26 took 2.510946273803711 sec
+10.138.0.2: Step 26 took 2.5097265243530273 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 27 took 2.506314516067505 sec
+10.138.0.2: Step 27 took 2.5037178993225098 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 28 took 2.5038812160491943 sec
+10.138.0.2: Step 28 took 2.5077033042907715 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 29 took 3.0805134773254395 sec
+10.138.0.2: [2024-11-06 19:17:49,155] [INFO] [logging.py:96:log_dist] [Rank 0] step=30, skipped=0, lr=[1e-05], mom=[[0.9, 0.999]]
+10.138.0.2: steps: 30 loss: 4.7476 iter time (s): 2.510 samples/sec: 0.398
+10.138.0.2: Step 29 took 2.5090978145599365 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 30 took 1.937300443649292 sec
+10.138.0.2: Step 30 took 2.5075783729553223 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 31 took 2.5116569995880127 sec
+10.138.0.2: Step 31 took 2.50919771194458 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 32 took 2.521794557571411 sec
+10.138.0.2: Step 32 took 2.521970510482788 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 33 took 2.504281759262085 sec
+10.138.0.2: Step 33 took 2.509120464324951 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 34 took 2.511702060699463 sec
+10.138.0.2: Step 34 took 2.508103609085083 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 35 took 2.505261182785034 sec
+10.138.0.2: Step 35 took 2.5114166736602783 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 36 took 2.514798641204834 sec
+10.138.0.2: Step 36 took 2.512970209121704 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 37 took 2.5130202770233154 sec
+10.138.0.2: Step 37 took 2.510514736175537 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 38 took 2.510050058364868 sec
+10.138.0.2: Step 38 took 2.5066747665405273 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 39 took 3.0759830474853516 sec
+10.138.0.2: [2024-11-06 19:18:14,259] [INFO] [logging.py:96:log_dist] [Rank 0] step=40, skipped=0, lr=[1e-05], mom=[[0.9, 0.999]]
+10.138.0.2: steps: 40 loss: 4.4405 iter time (s): 2.509 samples/sec: 0.398
+10.138.0.2: Step 39 took 2.505262851715088 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 40 took 1.9408643245697021 sec
+10.138.0.2: Step 40 took 2.514702320098877 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 41 took 2.510192632675171 sec
+10.138.0.2: Step 41 took 2.5234668254852295 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 42 took 2.5221357345581055 sec
+10.138.0.2: Step 42 took 2.509866952896118 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 43 took 2.5114083290100098 sec
+10.138.0.2: Step 43 took 2.509390115737915 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 44 took 2.505207061767578 sec
+10.138.0.2: Step 44 took 2.5030500888824463 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 45 took 2.504183769226074 sec
+10.138.0.2: Step 45 took 2.5042285919189453 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 46 took 2.5038552284240723 sec
+10.138.0.2: Step 46 took 2.5041840076446533 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 47 took 2.5112926959991455 sec
+10.138.0.2: Step 47 took 2.5173017978668213 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 48 took 2.51242733001709 sec
+10.138.0.2: Step 48 took 2.5083167552948 sec
+10.138.0.64: torch.Size([1024, 1, 50272]) torch.Size([1, 1024])
+10.138.0.64: Step 49 took 3.0797793865203857 sec
+10.138.0.64: -- BENCHMARK ENDED: Total time: 116.04025077819824 sec, Number of iterations: 49, Number of checkpoints: 1
+10.138.0.64: EXECUTION TIME: 116.04025077819824 sec
+10.138.0.2: [2024-11-06 19:18:39,360] [INFO] [logging.py:96:log_dist] [Rank 0] step=50, skipped=0, lr=[1e-05], mom=[[0.9, 0.999]]
+10.138.0.2: steps: 50 loss: 4.4555 iter time (s): 2.509 samples/sec: 0.399
+10.138.0.2: Step 49 took 2.5056419372558594 sec
+10.138.0.2: -- BENCHMARK ENDED: Total time: 115.46393537521362 sec, Number of iterations: 49, Number of checkpoints: 1
+10.138.0.2: EXECUTION TIME: 115.46393537521362 sec
+10.138.0.64: [2024-11-06 19:18:41,331] [INFO] [launch.py:347:main] Process 2300 exits successfully.
+10.138.0.2: [2024-11-06 19:18:41,905] [INFO] [launch.py:347:main] Process 3245 exits successfully.
