@@ -25,6 +25,8 @@
 #include <atomic>
 #include "FAAQueue.h"
 #include "DRAMAlloc.h"
+#include "socket_work.h"
+
 
 using namespace std;
 #define CACHELINES_IN_1G 16777216
@@ -60,6 +62,7 @@ using namespace std;
 static int curr_running = 0;
 
 static int *PR_ADDR;
+static int *PEER_CHECK_ADDR;
 static int PADDING[64];
 static int *PR_ADDR_DATA;
 
@@ -97,6 +100,16 @@ static FAAArrayQueue<int> free_space;
 
 int fd;
 DRAMAlloc dram;
+
+// for distributed
+bool is_distributed;
+int my_rank;
+int world_size;
+struct sockaddr_in socket_address;
+int comm_fd;
+int comm_socket;
+vector<int> client_sockets;
+int port = 1235;
 
 //===================================================================
 
@@ -217,7 +230,7 @@ static void BARRIER(void *p)
 
 //====================================================================
 
-static void initialize(const char *filename, int max_async, size_t batch_size_floats, size_t num_batches)
+static void initialize(const char *filename, int max_async, size_t batch_size_floats, size_t num_batches, bool dist, int dist_rank, int wsize)
 {
 
     struct stat buffer;
@@ -228,21 +241,22 @@ static void initialize(const char *filename, int max_async, size_t batch_size_fl
 
     //mapPersistentRegion(filename, PR_ADDR_DATA, REGION_SIZE, true, fd);
     mapPersistentRegion(filename, PR_ADDR, REGION_SIZE, false, fd);
-    PR_ADDR_DATA = PR_ADDR + (max_async+2)*OFFSET_SIZE;
+    PEER_CHECK_ADDR = PR_ADDR + OFFSET_SIZE;
+    PR_ADDR_DATA = PR_ADDR + (max_async+3)*OFFSET_SIZE;
 
-    printf("PR_ADDR_DATA is %p, PR_ADDR is %p\n", PR_ADDR_DATA, PR_ADDR);
+    printf("PR_ADDR_DATA is %p, PR_ADDR is %p, PEER_CHECK_ADDR is %p\n", PR_ADDR_DATA, PR_ADDR, PEER_CHECK_ADDR);
 
     curr_parall_iter.store(0);
     counter.store(1);
 
     // write init checkpoint on NVMM - locted right next to the checkpoint *
-    void *next_addr = PR_ADDR + OFFSET_SIZE; // sizeof(checkpoint*) == CACHELINE_SIZE
+    void *next_addr = PR_ADDR + 2*OFFSET_SIZE; // sizeof(checkpoint*) == CACHELINE_SIZE
     struct checkpoint check = {0, 0};
     // pmem_memcpy_persist(next_addr, &check, sizeof(struct checkpoint));
     // pmem_memcpy_persist(PR_ADDR, &next_addr, sizeof(struct checkpoint*));
 
     memcpy(next_addr, &check, sizeof(struct checkpoint));
-    int res = msync((void *)PR_ADDR, OFFSET_SIZE + sizeof(struct checkpoint), MS_SYNC);
+    int res = msync((void *)PR_ADDR, 2*OFFSET_SIZE + sizeof(struct checkpoint), MS_SYNC);
     if (res == -1)
     {
         perror("msync - init, next_addr ");
@@ -257,6 +271,14 @@ static void initialize(const char *filename, int max_async, size_t batch_size_fl
         exit(1);
     }
 
+    memcpy(PEER_CHECK_ADDR, &next_addr, sizeof(struct checkpoint *));
+    res = msync((void *)PEER_CHECK_ADDR, sizeof(struct checkpoint *), MS_SYNC);
+    if (res == -1)
+    {
+        perror("msync - init, PEER_CHECK_ADDR");
+        exit(1);
+    }
+
     // insert the current free data slots in the file
     for (int i = 0; i <= max_async; i++)
     {
@@ -267,6 +289,27 @@ static void initialize(const char *filename, int max_async, size_t batch_size_fl
     printf("Call dram.alloc, num_batches is %lu, batch_size_floats is %lu\n", num_batches, batch_size_floats);
     dram.alloc(num_batches, batch_size_floats);
     dram.initialize(num_batches, batch_size_floats);
+
+    is_distributed = dist;
+    my_rank = dist_rank;
+    world_size = wsize;
+
+    printf("------------------------- is_distributed is %d, rank is %d\n", is_distributed, my_rank);
+    if (is_distributed) {
+
+        char const* tmp = getenv("PCCHECK_COORDINATOR");
+        std::string server_ip(tmp);
+
+        printf("My rank is %d\n", my_rank);
+        if (my_rank==0) {
+            setup_rank0_socket(port, &comm_fd, &socket_address, world_size-1, client_sockets);
+        }
+        else {
+            setup_other_socket(&comm_socket, &socket_address, server_ip, port);
+        }
+    }
+
+
 }
 
 //====================================================================
@@ -339,7 +382,6 @@ public:
         long curr_counter = atomic_fetch_add(&counter, (long)1);
         // find free space to update the new checkpoint
 
-        // TODO: fix MAX_ASYNC
         while (true)
         {
             parall_iter = free_space.dequeue(parall_iter);
@@ -350,7 +392,7 @@ public:
         }
 
         // get the metadata address of the new slot
-        struct checkpoint *curr_checkpoint = (struct checkpoint *)(PR_ADDR + OFFSET_SIZE * (parall_iter + 2));
+        struct checkpoint *curr_checkpoint = (struct checkpoint *)(PR_ADDR + OFFSET_SIZE * (parall_iter + 3));
         struct checkpoint curr_check = {parall_iter, curr_counter};
         printf("Parall_iter %d, Write new metadata at address %p\n", parall_iter, curr_checkpoint);
         memcpy(curr_checkpoint, &curr_check, sizeof(struct checkpoint));
@@ -359,8 +401,11 @@ public:
 
     static void savenvmNew(size_t tid, float *arr, size_t total_size, int num_threads, int parall_iter, int batch_num, size_t batch_size, bool last_batch)
     {
+
+        printf("------------------------- savenvmNew, is_distributed is %d\n", is_distributed);
+
         // check the last updated checkpoint. Tries to change this value only in the last batch
-        struct checkpoint *checkp_info_new = (struct checkpoint *)(PR_ADDR + OFFSET_SIZE * (parall_iter + 2));
+        struct checkpoint *checkp_info_new = (struct checkpoint *)(PR_ADDR + OFFSET_SIZE * (parall_iter + 3));
 
         // int parallel_iteration = checkp_info_new->area;
         int counter_num = checkp_info_new->counter;
@@ -475,10 +520,27 @@ public:
                 struct checkpoint *volatile check = *(struct checkpoint *volatile *)PR_ADDR;
                 if (res)
                 {
-                    printf("CAS was successful! new counter is %ld\n", check->counter);
+                    printf("CAS was successful! new counter is %ld, is_distributed is %d\n", check->counter, is_distributed);
                     BARRIER(PR_ADDR);
-                    // TODO: what is this?
-                    int free = (((int *)last_check - PR_ADDR) / OFFSET_SIZE) - 2; // why -2?
+                    if (is_distributed) {
+                        printf("------------------------------------------ HERE!!!!!!!!\n");
+                        // TODO: send to rank 0
+                        if (my_rank==0) {
+                            wait_to_receive(client_sockets, world_size-1);
+                        }
+                        else {
+                            send_and_wait(&comm_socket, curr_counter);
+                        }
+
+                        memcpy(PEER_CHECK_ADDR, curr_checkpoint, sizeof(struct checkpoint *));
+                        res = msync((void *)PEER_CHECK_ADDR, sizeof(struct checkpoint *), MS_SYNC);
+                        if (res == -1) {
+                            perror("msync - init, PEER_CHECK_ADDR");
+                            exit(1);
+                        }
+                    }
+
+                    int free = (((int *)last_check - PR_ADDR) / OFFSET_SIZE) - 2;
                     if (free == -1)
                         return;
                     free_space.enqueue(free, free);
@@ -516,11 +578,11 @@ public:
 extern "C"
 {
 
-    NVM_write *writer(const char *filename, int max_async, size_t batch_size_floats, size_t num_batches)
+    NVM_write *writer(const char *filename, int max_async, size_t batch_size_floats, size_t num_batches, bool dist, int dist_rank, int world_size)
     {
         NVM_write *nvmobj = new NVM_write();
         // printf("%s\n", filename);
-        initialize(filename, max_async, batch_size_floats, num_batches);
+        initialize(filename, max_async, batch_size_floats, num_batches, dist, dist_rank, world_size);
         return nvmobj;
     }
 

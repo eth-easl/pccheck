@@ -10,12 +10,12 @@ import os
 class Writer(object):
 
     # constructor
-    def __init__(self, fname, lib_path, max_async, bsize, num_cpu_batches):
+    def __init__(self, fname, lib_path, max_async, bsize, num_cpu_batches, is_distributed, rank, world_size):
         # attribute
         self.lib = cdll.LoadLibrary(lib_path)
-        print(bsize, num_cpu_batches)
+        print(bsize, num_cpu_batches, is_distributed)
         self.writer_obj = self.lib.writer(
-            fname, max_async, c_size_t(bsize), num_cpu_batches
+            fname, max_async, c_size_t(bsize), num_cpu_batches, is_distributed, rank, world_size
         )
 
     def write_array(self, x, sz, num_threads):
@@ -86,6 +86,9 @@ class Checkpoint:
         gpu_ar=None,
         bsize=None,
         memory_saving=False,
+        is_distributed=False,
+        rank=0,
+        world_size=1
     ):
 
         self.total_size = total_size
@@ -95,13 +98,15 @@ class Checkpoint:
         self.lib_path = lib_path
         self.memory_saving = memory_saving
         self.ratio = ratio
+        self.is_distributed = is_distributed
+        self.rank = rank
+        self.world_size = world_size
 
         self.gpu_ar = gpu_ar
         if self.gpu_ar is not None:
             self.gpu_ar_given = True
         else:
             self.gpu_ar_given = False
-
 
         if bsize is None:
             self.bsize = total_size
@@ -278,6 +283,9 @@ class Checkpoint:
             self.max_async,
             int(self.bsize),
             total_mem_batches,
+            self.is_distributed,
+            self.rank,
+            self.world_size
         )
 
         self.timing_lock = Lock()

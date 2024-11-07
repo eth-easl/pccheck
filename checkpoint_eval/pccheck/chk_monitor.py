@@ -18,6 +18,9 @@ class Chk_monitor:
         is_sync=False,
         bsize=None,
         memory_saving=False,
+        is_distributed=True,
+        rank=0,
+        world_size=1,
         **kwargs,
     ):
 
@@ -46,6 +49,9 @@ class Chk_monitor:
             gpu_ar=gpu_ar,
             bsize=bsize,
             memory_saving=memory_saving,
+            is_distributed=is_distributed,
+            rank=rank,
+            world_size=world_size
         )
 
         self.chk_process = Process(

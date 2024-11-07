@@ -1,6 +1,6 @@
 import os
 
-iters = 500
+iters = 200
 cfreqs = [10]
 model = "vgg16"
 batchsize = 32
