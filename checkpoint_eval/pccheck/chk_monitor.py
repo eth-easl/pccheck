@@ -18,7 +18,7 @@ class Chk_monitor:
         is_sync=False,
         bsize=None,
         memory_saving=False,
-        is_distributed=True,
+        is_distributed=False,
         rank=0,
         world_size=1,
         **kwargs,

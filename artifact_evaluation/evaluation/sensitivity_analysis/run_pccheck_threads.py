@@ -7,14 +7,13 @@ home_dir = os.path.expanduser("~")
 lib_path = f"{home_dir}/pccheck/checkpoint_eval/pccheck/libtest_ssd.so"
 script_dir = f"{home_dir}/transformers/examples/pytorch/language-modeling/run_clm_pccheck.py"
 
-iters = 300
+iters = 100
 model = "facebook/opt-350m"
 batchsize = 2
-num_threads = 1
 
 cfreq = 10
 max_async = [1,2,3]
-num_threads = list(range(1,4))
+num_threads = list(range(1,3))
 
 # 1. Run
 def run():
@@ -22,7 +21,7 @@ def run():
     # run 0 first
     os.system("rm -rf output")
     proc = f"python3.9 {script_dir} --model_name_or_path {model} --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train "\
-        f"--max_async 1 --num_threads 1  --per_device_train_batch_size {batchsize} --cfreq 0 --bench_total_steps {iters} --c_lib_path {lib_path} > log_0.txt"
+        f"--max_async 1 --num_threads 1  --per_device_train_batch_size {batchsize} --cfreq 0 --bench_total_steps {iters} --c_lib_path {lib_path}"
     os.system(proc)
 
     for num_conc in max_async:
@@ -30,7 +29,7 @@ def run():
             os.system("rm -rf output")
             print(f"Run with num_co {num_conc}, num_threads {thread_count}")
             proc = f"python3.9 {script_dir} --model_name_or_path {model} --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train "\
-                f"--max_async {num_conc} --num_threads {thread_count}  --per_device_train_batch_size {batchsize} --cfreq {cfreq} --bench_total_steps {iters} --c_lib_path {lib_path} > log_{num_conc}_{thread_count}.txt"
+                f"--max_async {num_conc} --num_threads {thread_count} --psize 5 --per_device_train_batch_size {batchsize} --cfreq {cfreq} --bench_total_steps {iters} --c_lib_path {lib_path}"
             os.system(proc)
 
 

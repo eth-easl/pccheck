@@ -7,7 +7,7 @@ home_dir = os.path.expanduser("~")
 lib_path = f"{home_dir}/pccheck/checkpoint_eval/pccheck/libtest_ssd.so"
 script_dir = f"{home_dir}/pccheck/checkpoint_eval/models/vision/"
 
-iters = 500
+iters = 200
 model = "vgg16"
 batchsize = 32
 num_threads = 1
@@ -88,11 +88,11 @@ def plot(data):
     handles, labels = ax.get_legend_handles_labels()
     plt.legend(handles, labels, loc='upper right', ncol=1, fontsize=24)
     #plt.title(model, fontsize=label_font_size)
-    plt.savefig("fig12.pdf", bbox_inches="tight")
+    plt.savefig("fig12.png", bbox_inches="tight")
 
 
 
 if __name__ == "__main__":
-    run()
+    #run()
     df = collect()
     plot(df)
