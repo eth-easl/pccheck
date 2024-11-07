@@ -1,0 +1,13 @@
+numpy==1.26.2
+torch==2.1.2
+accelerate==0.20.3
+torchvision==0.16.2
+wget
+nltk
+pynvml
+sacremoses
+evaluate
+deepspeed==0.12.6
+matplotlib
+lamb
+boto3
