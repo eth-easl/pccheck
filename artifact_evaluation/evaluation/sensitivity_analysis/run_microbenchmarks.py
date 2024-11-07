@@ -95,6 +95,6 @@ def plot(data):
     plt.savefig(f"fig11.png", bbox_inches="tight")
 
 if __name__ == "__main__":
-    # run()
+    run()
     df = collect()
     plot(df)

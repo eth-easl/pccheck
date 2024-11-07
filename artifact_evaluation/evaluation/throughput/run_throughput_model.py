@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 home_dir = os.path.expanduser("~")
 lib_path = f"{home_dir}/pccheck/checkpoint_eval/pccheck/libtest_ssd.so"
 
-cfreqs = [0,10,25,50]
+cfreqs = [0,1,10,25,50,75,100]
 
 model_scripts_dir = {
     "vgg16": f"{home_dir}/pccheck/checkpoint_eval/models/vision/",
@@ -111,7 +111,7 @@ def run_transformer():
     # run pccheck
     for cf in cfreqs:
         print(f"Checkpoint Frequency {cf}")
-        proc = f"cd {script_dir} && python3.9 train_pccheck.py --config_file wt103_base.yaml --batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} --max_async 4 --num_threads 2 --c_lib_path {lib_path}"
+        proc = f"cd {script_dir} && python3.9 train_pccheck.py --config_file wt103_base.yaml --batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} --max_async 4 --num_threads 2 --c_lib_path {lib_path} > {this_dir}/transformer/log_transformer_pccheck_{cf}.txt"
         os.system(proc)
 
 
@@ -237,6 +237,6 @@ def plot_model(model, data):
 
 if __name__ == "__main__":
     model = sys.argv[1]
-    #un(model)
+    run(model)
     data = collect_model(model)
     plot_model(model, data)

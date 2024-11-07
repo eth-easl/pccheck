@@ -523,8 +523,6 @@ public:
                     printf("CAS was successful! new counter is %ld, is_distributed is %d\n", check->counter, is_distributed);
                     BARRIER(PR_ADDR);
                     if (is_distributed) {
-                        printf("------------------------------------------ HERE!!!!!!!!\n");
-                        // TODO: send to rank 0
                         if (my_rank==0) {
                             wait_to_receive(client_sockets, world_size-1);
                         }

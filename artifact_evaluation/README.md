@@ -98,17 +98,14 @@ We recommend step 1, which generates Fig 8b, 8c, 8d from the paper.
 
 
 ## Figure 9
+(NOTE: needs to be done after Figure 8!)
 
 Do `cd evaluation/throughput && bash get_goodput.sh`. This will generate csv files and plots for each model for figures 9b, 9c, 9d.
 
-## Figure 11
+## Figure 11 (~ 35 min)
 
 Do `cd evaluation/sensitivity_analysis && python run_microbenchmarks.py`. This will generate a `fig11.pdf` file
 
-## Figure 12
+## Figure 12 (~ 1 hour)
 
 Do `cd evaluation/sensitivity_analysis && python run_pccheck_async.py`. This will generate a `fig12.pdf` file
-
-## Figure 13
-
-Do `cd evaluation/sensitivity_analysis && python run_pccheck_threads.py`. This will generate a `fig13.pdf` file
