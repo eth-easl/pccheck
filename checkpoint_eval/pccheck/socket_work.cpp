@@ -17,6 +17,7 @@ void setup_rank0_socket(const int port, int* server_fd, struct sockaddr_in* addr
 
     // Wait for all nodes to connect
     for (int i=0; i<N; i++) {
+        printf("Get new connection for node %d\n", i);
         int new_socket = accept(*server_fd, (struct sockaddr *)address, (socklen_t *)&addrlen);
         client_sockets.push_back(new_socket);
         printf("Node %d connected!\n");
@@ -34,6 +35,7 @@ void setup_other_socket(int* sock, struct sockaddr_in* serv_addr, const std::str
 
     inet_pton(AF_INET, server_ip.c_str(), &(serv_addr->sin_addr));
     connect(*sock, (struct sockaddr *)serv_addr, sizeof(*serv_addr));
+    printf("Connected!\n");
 
 }
 

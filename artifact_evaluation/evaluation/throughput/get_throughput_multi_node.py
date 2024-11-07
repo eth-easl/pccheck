@@ -8,8 +8,8 @@ home_dir = os.path.expanduser("~")
 lib_path = f"{home_dir}/pccheck/checkpoint_eval/pccheck/libtest_ssd.so"
 script_dir = f"{home_dir}/transformers/examples/pytorch/language-modeling"
 this_dir = f"{home_dir}/pccheck/artifact_evaluation/evaluation/throughput"
-cfreqs = [0, 1, 10, 25, 50, 75, 100]
-iters = 200
+cfreqs = [10]
+iters = 50
 WARMUP = 3
 
 label_dict = {
@@ -28,39 +28,40 @@ def create_files(ip1, ip2):
 
     with open(f"{home_dir}/.deepspeed_env", "w") as f:  # TODO
         f.write(f"GEMINI_MASTER_ADDR={ip1}\n")
-        f.write(f"GEMINI_MASTER_PORT=1235")
+        f.write(f"GEMINI_MASTER_PORT=1235\n")
+        f.write(f"PCCHECK_COORDINATOR={ip1}\n")
     f.close()
 
 
 def run(ip1):
     os.makedirs("opt_27", exist_ok=True)
     # run cfreq
-    print("Run for CheckFreq")
-    for cf in cfreqs:
-        print(f"Checkpoint Frequency {cf}")
-        proc = f"cd {script_dir} && deepspeed --num_gpus=1 --num_nodes 2 --hostfile hostfile --master_addr {ip1} --master_port 1234  run_clm_pp_cfreq.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-2.7b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1  --do_train --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} > {this_dir}/opt_27/log_opt27_cfreq_{cf}.txt"
-        os.system(proc)
+    # print("Run for CheckFreq")
+    # for cf in cfreqs:
+    #     print(f"Checkpoint Frequency {cf}")
+    #     proc = f"cd {script_dir} && deepspeed --num_gpus=1 --num_nodes 2 --hostfile hostfile --master_addr {ip1} --master_port 1234  run_clm_pp_cfreq.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-2.7b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1  --do_train --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} > {this_dir}/opt_27/log_opt27_cfreq_{cf}.txt"
+    #     os.system(proc)
 
-    # # run gpm
-    print("Run for GPM")
-    for cf in cfreqs:
-        print(f"Checkpoint Frequency {cf}")
-        proc = f"cd {script_dir} && deepspeed --num_gpus=1 --num_nodes 2 --hostfile hostfile --master_addr {ip1} --master_port 1234  run_clm_pp_gpm.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-2.7b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1  --do_train --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} > {this_dir}/opt_27/log_opt27_gpm_{cf}.txt"
-        os.system(proc)
+    # # # run gpm
+    # print("Run for GPM")
+    # for cf in cfreqs:
+    #     print(f"Checkpoint Frequency {cf}")
+    #     proc = f"cd {script_dir} && deepspeed --num_gpus=1 --num_nodes 2 --hostfile hostfile --master_addr {ip1} --master_port 1234  run_clm_pp_gpm.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-2.7b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1  --do_train --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} > {this_dir}/opt_27/log_opt27_gpm_{cf}.txt"
+    #     os.system(proc)
 
-    # # run gemini
-    print("Run for Gemini")
-    for cf in cfreqs:
-        print(f"Checkpoint Frequency {cf}")
-        proc = f"cd {script_dir} && deepspeed --num_gpus=1 --num_nodes 2 --hostfile hostfile --master_addr {ip1} --master_port 1234  run_clm_pp_gemini.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-2.7b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1  --do_train --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} > {this_dir}/opt_27/log_opt27_gemini_{cf}.txt"
-        os.system(proc)
+    # # # run gemini
+    # print("Run for Gemini")
+    # for cf in cfreqs:
+    #     print(f"Checkpoint Frequency {cf}")
+    #     proc = f"cd {script_dir} && deepspeed --num_gpus=1 --num_nodes 2 --hostfile hostfile --master_addr {ip1} --master_port 1234  run_clm_pp_gemini.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-2.7b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1  --do_train --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} > {this_dir}/opt_27/log_opt27_gemini_{cf}.txt"
+    #     os.system(proc)
 
 
     # # run pccheck
     # print("Run for PCCheck")
     for cf in cfreqs:
         print(f"Checkpoint Frequency {cf}")
-        proc = f"cd {script_dir} && deepspeed --num_gpus=1 --num_nodes 2 --hostfile hostfile --master_addr {ip1} --master_port 1234  run_clm_pp_pccheck.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-2.7b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1  --do_train --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} --c_lib_path {lib_path} --max_async 2 --num_threads 2 > {this_dir}/opt_27/log_opt27_pccheck_{cf}.txt"
+        proc = f"cd {script_dir} && deepspeed --num_gpus=1 --num_nodes 2 --hostfile hostfile --master_addr {ip1} --master_port 1234  run_clm_pp_pccheck.py --deepspeed ds_config.json --ds_config ds_config.json --model_name_or_path facebook/opt-350m --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1  --do_train --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} --c_lib_path {lib_path} --max_async 2 --num_threads 2"
         os.system(proc)
 
 
@@ -145,7 +146,7 @@ def plot(data):
 if __name__ == "__main__":
     ip1 = sys.argv[1]
     ip2 = sys.argv[2]
-    #create_files(ip1, ip2)
+    create_files(ip1, ip2)
     run(ip1)
     #data = collect()
     #plot(data)

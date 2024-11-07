@@ -56,7 +56,7 @@ DEEPSPEED_PATH=$(python3.9 -c 'import deepspeed; print(deepspeed.__path__[0])' |
 cp pccheck/checkpoint_eval/deepspeed/__init__.py $DEEPSPEED_PATH/
 cp pccheck/checkpoint_eval/models/llm_distr/trainer_pp.py transformers/src/transformers/
 cp pccheck/checkpoint_eval/models/llm_distr/deepspeed.py transformers/src/transformers/
-cp pccheck/checkpoint_eval/models/llm_distr/ds_config.json transformers/src/transformers/
+cp pccheck/checkpoint_eval/models/llm_distr/ds_config.json transformers/examples/pytorch/language-modeling/
 cp pccheck/checkpoint_eval/models/llm_distr/bloom_ds.py transformers/examples/pytorch/language-modeling/
 cp pccheck/checkpoint_eval/models/llm_distr/convert_to_ds.py transformers/examples/pytorch/language-modeling/
 cp pccheck/checkpoint_eval/models/llm_distr/opt_ds.py transformers/examples/pytorch/language-modeling/

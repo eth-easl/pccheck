@@ -695,6 +695,9 @@ def main():
     checkpoints = 0
     warmup = 3
 
+    rank = torch.distributed.get_rank()
+    world_size = torch.distributed.get_world_size()
+
     starts = time.time()
     for step in range(bench_total_steps):
         print(f"Train for step {step}")
@@ -706,11 +709,12 @@ def main():
                     # total_size = get_total_size(model, [self.optimizer])
                     gpu_ar, total_size = initialize(
                         model, [optimizer], do_opt_step=False)
-                    print(f"----------------- total size is {total_size}")
+                    print(f"----------------- total size is {total_size}, rank: {rank}, world_size: {world_size}")
                     set_storage(model, [optimizer], gpu_ar)
                     torch.cuda.empty_cache()
                     chk_monitor = Chk_monitor(model_args.c_lib_path, total_size, model_args.num_threads, model_args.max_async, True,
-                                            gpu_ar=gpu_ar, bsize=total_size//5, model=model.state_dict(), optimizer=optimizer.state_dict(), memory_saving=True)
+                                            gpu_ar=gpu_ar, bsize=total_size//5, model=model.state_dict(), optimizer=optimizer.state_dict(), memory_saving=True,
+                                            is_distributed=False, rank=rank, world_size=world_size)
                     model_engine.chk_monitor = chk_monitor
 
                 print("save checkpoint!!!")
