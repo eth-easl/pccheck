@@ -20,9 +20,11 @@ RUN python3.12 -m pip install accelerate
 RUN python3.12 -m pip install wget nltk
 RUN python3.12 -m pip install 'git+https://github.com/NVIDIA/dllogger'
 RUN python3.12 -m pip install pynvml sacremoses evaluate
-RUN python3.12 -m pip install deepspeed==0.12.6
+RUN python3.12 -m pip install deepspeed==0.16.5
 RUN python3.12 -m pip install matplotlib
 RUN python3.12 -m pip install lamb
 RUN python3.12 -m pip install boto3
+
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg && apt-get update -y && apt-get install google-cloud-cli -y
 
 WORKDIR /root
