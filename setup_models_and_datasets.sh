@@ -8,7 +8,7 @@ git reset --hard 54e2fb4853ac0c393335f5187bd3b9aff4bbd765
 
 # Transformer
 cd ~
-python3.9 -m pip install 'git+https://github.com/NVIDIA/dllogger'
+python3.12 -m pip install 'git+https://github.com/NVIDIA/dllogger'
 cp pccheck/checkpoint_eval/models/transformer/getdata.sh DeepLearningExamples/PyTorch/LanguageModeling/Transformer-XL/
 cp pccheck/checkpoint_eval/models/transformer/train_checkfreq.py DeepLearningExamples/PyTorch/LanguageModeling/Transformer-XL/pytorch/
 cp pccheck/checkpoint_eval/models/transformer/train_gpm.py DeepLearningExamples/PyTorch/LanguageModeling/Transformer-XL/pytorch/
@@ -38,8 +38,8 @@ cp pccheck/checkpoint_eval/models/bert/run_pccheck.py DeepLearningExamples/PyTor
 
 # ## HF Transformers
 cd ~
-git clone https://github.com/huggingface/transformers && cd transformers && git reset --hard ee88ae59940fd4b2c8fc119373143d7a1175c651 && python3.9 -m pip install -e .
-cd ~ && python3.9 -m pip install git+https://github.com/huggingface/datasets#egg=datasets
+git clone https://github.com/huggingface/transformers && cd transformers && git reset --hard ee88ae59940fd4b2c8fc119373143d7a1175c651 && python3.12 -m pip install -e .
+cd ~ && python3.12 -m pip install git+https://github.com/huggingface/datasets#egg=datasets
 cp pccheck/checkpoint_eval/models/opt/run_clm_cfreq.py transformers/examples/pytorch/language-modeling/
 cp pccheck/checkpoint_eval/models/opt/run_clm_gpm.py transformers/examples/pytorch/language-modeling/
 cp pccheck/checkpoint_eval/models/opt/run_clm_pccheck.py transformers/examples/pytorch/language-modeling/
@@ -52,7 +52,7 @@ cp pccheck/checkpoint_eval/models/opt/__init__.py transformers/src/transformers/
 
 # ## DeepSpeed
 cd ~
-DEEPSPEED_PATH=$(python3.9 -c 'import deepspeed; print(deepspeed.__path__[0])' | tail -1)
+DEEPSPEED_PATH=$(python3.12 -c 'import deepspeed; print(deepspeed.__path__[0])' | tail -1)
 cp pccheck/checkpoint_eval/deepspeed/__init__.py $DEEPSPEED_PATH/
 cp pccheck/checkpoint_eval/models/llm_distr/trainer_pp.py transformers/src/transformers/
 cp pccheck/checkpoint_eval/models/llm_distr/deepspeed.py transformers/src/transformers/

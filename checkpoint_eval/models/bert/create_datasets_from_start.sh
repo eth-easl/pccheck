@@ -14,5 +14,5 @@
 # limitations under the License.
 
 #Download
-python3.9 $HOME/DeepLearningExamples/PyTorch/LanguageModeling/BERT/data/bertPrep.py --action download --dataset google_pretrained_weights  # Includes vocab
-python3.9 $HOME/DeepLearningExamples/PyTorch/LanguageModeling/BERT/data/bertPrep.py --action download --dataset squad
+python3.12 $HOME/DeepLearningExamples/PyTorch/LanguageModeling/BERT/data/bertPrep.py --action download --dataset google_pretrained_weights  # Includes vocab
+python3.12 $HOME/DeepLearningExamples/PyTorch/LanguageModeling/BERT/data/bertPrep.py --action download --dataset squad

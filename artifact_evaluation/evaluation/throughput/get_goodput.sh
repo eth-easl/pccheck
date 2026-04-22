@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3.9 run_goodput_model.py transformer
+python3.12 run_goodput_model.py transformer

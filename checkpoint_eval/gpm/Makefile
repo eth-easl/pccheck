@@ -1,7 +1,9 @@
-CC = /usr/local/cuda-12.1/bin/nvcc
-CC_FLAGS = -rdc=true -O3 -lpthread -lnvidia-ml -arch=sm_80 -lcudnn -lcudadevrt -lcudart_static -lrt -ldl -lcublas -lpmem -Xcompiler -fopenmp -lpci
+CC = /usr/local/cuda/bin/nvcc
+ARCH := sm_$(shell nvidia-smi --query-gpu=compute_cap --format=csv,noheader | head -n1 | tr -d '.')
+
+CC_FLAGS = -rdc=true -O3 -lpthread -lnvidia-ml -arch=${ARCH} -lcudnn -lcudadevrt -lcudart_static -lrt -ldl -lcublas -lpmem -Xcompiler -fopenmp -lpci
 CUDA_SDK_PATH := $(SDK_DIR)
-CUDA_PATH := /usr/local/cuda-12.1
+CUDA_PATH := /usr/local/cuda
 
 INCLUDES := -I$(CUDA_PATH)/include
 
@@ -26,7 +28,7 @@ cuda_wrapper.o: cuda_wrapper.cpp
 	g++  -O3 -c cuda_wrapper.cpp -fPIC $(INCLUDES) -o cuda_wrapper.o
 
 file_link.o: checkp_func.o
-	$(CC)  --compiler-options '-fPIC'  -arch=sm_80 -dlink -o file_link.o checkp_func.o -lcudadevrt -lcudart
+	$(CC)  --compiler-options '-fPIC'  -arch=${ARCH} -dlink -o file_link.o checkp_func.o -lcudadevrt -lcudart
 
 
 libtest.so: cuda_wrapper.o file_link.o checkp_func.o

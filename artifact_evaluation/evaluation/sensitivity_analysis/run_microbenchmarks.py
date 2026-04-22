@@ -13,13 +13,13 @@ baselines = ["CheckFreq", "GPM", "PCcheck"]
 
 def run():
     for size in sizes_mb:
-        run_cfreq = f"python3.9 {script_dir}/test_cfreq.py --size {size} --iterations 20 > cfreq_{size}.txt"
+        run_cfreq = f"python3.12 {script_dir}/test_cfreq.py --size {size} --iterations 20 > cfreq_{size}.txt"
         os.system(run_cfreq)
 
-        run_gpm = f"python3.9 {script_dir}/test_gpm.py --size {size} --iterations 20 > gpm_{size}.txt"
+        run_gpm = f"python3.12 {script_dir}/test_gpm.py --size {size} --iterations 20 > gpm_{size}.txt"
         os.system(run_gpm)
 
-        run_pccheck = f"python3.9 {script_dir}/test_pccheck.py --size {size} --iterations 20 --num-threads 4 --c_lib_path {lib_path} > pccheck_{size}.txt"
+        run_pccheck = f"python3.12 {script_dir}/test_pccheck.py --size {size} --iterations 20 --num-threads 4 --c_lib_path {lib_path} > pccheck_{size}.txt"
         os.system(run_pccheck)
 
 

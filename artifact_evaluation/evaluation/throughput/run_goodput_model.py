@@ -49,7 +49,7 @@ def get_load_time(model):
         checkpoint_file = f"{script_dir}/checkpoint-0-0.chk"
         if os.path.exists(checkpoint_file):
             os.remove(checkpoint_file)
-        proc = f"cd {script_dir} && python3.9 train_checkfreq.py --config_file wt103_base.yaml --batch_size 64 --cfreq 200 --bench_total_steps 200"
+        proc = f"cd {script_dir} && python3.12 train_checkfreq.py --config_file wt103_base.yaml --batch_size 64 --cfreq 200 --bench_total_steps 200"
         os.system(proc)
         return checkpoint_file
 
@@ -59,7 +59,7 @@ def get_load_time(model):
         checkpoint_file = f"checkpoint-0-0.chk"
         if os.path.exists(checkpoint_file):
             os.remove(checkpoint_file)
-        proc = f"python3.9 {script_dir}/run_squad_chfreq.py --bert_model=bert-large-uncased --train_batch_size 3 --output_dir output --vocab_file {script_dir}/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt  --config_file {script_dir}/bert_configs/large.json --cfreq 200 --bench_total_steps 200 --max_steps 200 --do_train --train_file {script_dir}/download/squad/v1.1/train-v1.1.json"
+        proc = f"python3.12 {script_dir}/run_squad_chfreq.py --bert_model=bert-large-uncased --train_batch_size 3 --output_dir output --vocab_file {script_dir}/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt  --config_file {script_dir}/bert_configs/large.json --cfreq 200 --bench_total_steps 200 --max_steps 200 --do_train --train_file {script_dir}/download/squad/v1.1/train-v1.1.json"
         os.system(proc)
         return checkpoint_file
 
@@ -70,7 +70,7 @@ def get_load_time(model):
         if os.path.exists(checkpoint_file):
             os.remove(checkpoint_file)
         os.system("rm -rf output")
-        proc = f"python3.9 {script_dir}/run_clm_cfreq.py --model_name_or_path facebook/opt-1.3b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --per_device_train_batch_size 1 --cfreq 200 --bench_total_steps 200"
+        proc = f"python3.12 {script_dir}/run_clm_cfreq.py --model_name_or_path facebook/opt-1.3b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --per_device_train_batch_size 1 --cfreq 200 --bench_total_steps 200"
         os.system(proc)
         return checkpoint_file
 
@@ -90,9 +90,9 @@ def get_load_time(model):
         script_dir = model_scripts_dir[model]
         this_dir = f"{home_dir}/pccheck/artifact_evaluation/evaluation/throughput"
         os.system(f"cp loading.py {script_dir}/")
-        os.system(f"cd {script_dir} && python3.9 loading.py checkpoint-0-0.chk > {this_dir}/loading_log_{model}.txt")
+        os.system(f"cd {script_dir} && python3.12 loading.py checkpoint-0-0.chk > {this_dir}/loading_log_{model}.txt")
     else:
-        os.system(f"python3.9 loading.py {checkpoint_file} > loading_log_{model}.txt")
+        os.system(f"python3.12 loading.py {checkpoint_file} > loading_log_{model}.txt")
 
     # 3. Read file and return
     with open(f"loading_log_{model}.txt", 'r') as f:

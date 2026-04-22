@@ -7,5 +7,5 @@ batchsize = 32
 
 for cf in cfreqs:
     print(f"Run with cfreq {cf}")
-    proc = f"python3.9 train_gpm.py --dataset imagenet  --batchsize {batchsize} --arch {model} --cfreq {cf} --bench_total_steps {iters}"
+    proc = f"python3.12 train_gpm.py --dataset imagenet  --batchsize {batchsize} --arch {model} --cfreq {cf} --bench_total_steps {iters}"
     os.system(proc)

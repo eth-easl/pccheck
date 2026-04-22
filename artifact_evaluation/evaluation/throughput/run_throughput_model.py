@@ -37,7 +37,7 @@ def run_opt():
     for cf in cfreqs:
         os.system("rm -rf output")
         print(f"Checkpoint Frequency {cf}")
-        proc = f"python3.9 {script_dir}/run_clm_cfreq.py --model_name_or_path facebook/opt-1.3b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --per_device_train_batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} > opt13/log_opt13_cfreq_{cf}.txt"
+        proc = f"python3.12 {script_dir}/run_clm_cfreq.py --model_name_or_path facebook/opt-1.3b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --per_device_train_batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} > opt13/log_opt13_cfreq_{cf}.txt"
         os.system(proc)
 
     # run GPM
@@ -45,7 +45,7 @@ def run_opt():
     for cf in cfreqs:
         os.system("rm -rf output")
         print(f"Checkpoint Frequency {cf}")
-        proc = f"python3.9 {script_dir}/run_clm_gpm.py --model_name_or_path facebook/opt-1.3b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --per_device_train_batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} > opt13/log_opt13_gpm_{cf}.txt"
+        proc = f"python3.12 {script_dir}/run_clm_gpm.py --model_name_or_path facebook/opt-1.3b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --per_device_train_batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} > opt13/log_opt13_gpm_{cf}.txt"
         os.system(proc)
 
     # # run PCcheck
@@ -53,7 +53,7 @@ def run_opt():
     for cf in cfreqs:
         os.system("rm -rf output")
         print(f"Checkpoint Frequency {cf}")
-        proc = f"python3.9 {script_dir}/run_clm_pccheck.py --model_name_or_path facebook/opt-1.3b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --max_async 2 --num_threads 2 --psize 4 --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} --c_lib_path {lib_path} > opt13/log_opt13_pccheck_{cf}.txt"
+        proc = f"python3.12 {script_dir}/run_clm_pccheck.py --model_name_or_path facebook/opt-1.3b --output_dir output --dataset_name wikitext --dataset_config_name wikitext-2-raw-v1 --do_train --max_async 2 --num_threads 2 --psize 4 --per_device_train_batch_size 1 --cfreq {cf} --bench_total_steps {iters} --c_lib_path {lib_path} > opt13/log_opt13_pccheck_{cf}.txt"
         os.system(proc)
 
 
@@ -69,21 +69,21 @@ def run_transformer():
     print("Run for CheckFreq")
     for cf in cfreqs:
         print(f"Checkpoint Frequency {cf}")
-        proc = f"cd {script_dir} && python3.9 train_checkfreq.py --config_file wt103_base.yaml --batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} > {this_dir}/transformer/log_transformer_cfreq_{cf}.txt"
+        proc = f"cd {script_dir} && python3.12 train_checkfreq.py --config_file wt103_base.yaml --batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} > {this_dir}/transformer/log_transformer_cfreq_{cf}.txt"
         os.system(proc)
 
     print("Run for GPM")
     # run gpm
     for cf in cfreqs:
         print(f"Checkpoint Frequency {cf}")
-        proc = f"cd {script_dir} && python3.9 train_gpm.py --config_file wt103_base.yaml --batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} > {this_dir}/transformer/log_transformer_gpm_{cf}.txt"
+        proc = f"cd {script_dir} && python3.12 train_gpm.py --config_file wt103_base.yaml --batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} > {this_dir}/transformer/log_transformer_gpm_{cf}.txt"
         os.system(proc)
 
     print("Run for PCCheck")
     # run pccheck
     for cf in cfreqs:
         print(f"Checkpoint Frequency {cf}")
-        proc = f"cd {script_dir} && python3.9 train_pccheck.py --config_file wt103_base.yaml --batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} --max_async 4 --num_threads 2 --c_lib_path {lib_path} > {this_dir}/transformer/log_transformer_pccheck_{cf}.txt"
+        proc = f"cd {script_dir} && python3.12 train_pccheck.py --config_file wt103_base.yaml --batch_size {batch_size} --cfreq {cf} --bench_total_steps {iters} --max_async 4 --num_threads 2 --c_lib_path {lib_path} > {this_dir}/transformer/log_transformer_pccheck_{cf}.txt"
         os.system(proc)
 
 
@@ -96,21 +96,21 @@ def run_bert():
     print("Run for CheckFreq")
     for cf in cfreqs:
         print(f"Checkpoint Frequency {cf}")
-        proc = f"python3.9 {script_dir}/run_squad_chfreq.py --bert_model=bert-large-uncased --train_batch_size {batch_size} --output_dir output --vocab_file {script_dir}/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt  --config_file {script_dir}/bert_configs/large.json --cfreq {cf} --bench_total_steps {iters} --max_steps {iters} --do_train --train_file {script_dir}/download/squad/v1.1/train-v1.1.json > bert/log_bert_cfreq_{cf}.txt"
+        proc = f"python3.12 {script_dir}/run_squad_chfreq.py --bert_model=bert-large-uncased --train_batch_size {batch_size} --output_dir output --vocab_file {script_dir}/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt  --config_file {script_dir}/bert_configs/large.json --cfreq {cf} --bench_total_steps {iters} --max_steps {iters} --do_train --train_file {script_dir}/download/squad/v1.1/train-v1.1.json > bert/log_bert_cfreq_{cf}.txt"
         os.system(proc)
 
     print("Run for GPM")
     # run gpm
     for cf in cfreqs:
         print(f"Checkpoint Frequency {cf}")
-        proc = f"python3.9 {script_dir}/run_squad_gpm.py --bert_model=bert-large-uncased --train_batch_size {batch_size} --output_dir output --vocab_file {script_dir}/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt  --config_file {script_dir}/bert_configs/large.json --cfreq {cf} --bench_total_steps {iters} --max_steps {iters} --do_train --train_file {script_dir}/download/squad/v1.1/train-v1.1.json > bert/log_bert_gpm_{cf}.txt"
+        proc = f"python3.12 {script_dir}/run_squad_gpm.py --bert_model=bert-large-uncased --train_batch_size {batch_size} --output_dir output --vocab_file {script_dir}/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt  --config_file {script_dir}/bert_configs/large.json --cfreq {cf} --bench_total_steps {iters} --max_steps {iters} --do_train --train_file {script_dir}/download/squad/v1.1/train-v1.1.json > bert/log_bert_gpm_{cf}.txt"
         os.system(proc)
 
     print("Run for PCCheck")
     # run pccheck
     for cf in cfreqs:
         print(f"Checkpoint Frequency {cf}")
-        proc = f"python3.9 {script_dir}/run_squad_pccheck.py --bert_model=bert-large-uncased --train_batch_size {batch_size} --output_dir output --vocab_file {script_dir}/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt  --config_file {script_dir}/bert_configs/large.json --do_train --train_file {script_dir}/download/squad/v1.1/train-v1.1.json --cfreq {cf} --max_async 4 --num_threads 2 --bench_total_steps {iters} --c_lib_path {lib_path} > bert/log_bert_pccheck_{cf}.txt"
+        proc = f"python3.12 {script_dir}/run_squad_pccheck.py --bert_model=bert-large-uncased --train_batch_size {batch_size} --output_dir output --vocab_file {script_dir}/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/vocab.txt  --config_file {script_dir}/bert_configs/large.json --do_train --train_file {script_dir}/download/squad/v1.1/train-v1.1.json --cfreq {cf} --max_async 4 --num_threads 2 --bench_total_steps {iters} --c_lib_path {lib_path} > bert/log_bert_pccheck_{cf}.txt"
         os.system(proc)
 
 
