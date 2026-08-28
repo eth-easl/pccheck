@@ -1,4 +1,5 @@
 import torch
+import csv
 import time
 from ctypes import *
 from math import ceil
@@ -246,6 +247,31 @@ class Checkpoint:
             f"---------------------- [PERF] Single Checkpoint time is {time.time()-start} sec, average is {np.median(self.chk_times)}"
         )
 
+        # Optional machine-readable trace of when checkpoints became durable.
+        # All the batch threads have joined here, and the last of them ran
+        # savenvm_new(is_last_batch=True), which does the data msync, the
+        # metadata msync and the CAS -- so `start + total_time` is the instant
+        # the checkpoint became recoverable, not merely queued.
+        #
+        # Driven by an env var so it costs nothing when unset and needs no
+        # plumbing through Chk_monitor: this runs in the spawned checkpoint
+        # worker, which inherits the environment.
+        log_path = os.environ.get("PCCHECK_PERSIST_LOG")
+        if log_path:
+            with self.timing_lock:
+                idx = len(self.chk_times) - 1
+                is_new = not os.path.exists(log_path)
+                with open(log_path, "a", newline="") as f:
+                    w = csv.writer(f)
+                    if is_new:
+                        w.writerow(["idx", "t_start", "t_persist", "dur_ms"])
+                    w.writerow([
+                        idx,
+                        f"{start:.6f}",
+                        f"{start + total_time:.6f}",
+                        f"{total_time * 1000:.3f}",
+                    ])
+
     def convert_1d(self, gpu_ar, checkpoint_dict, idx):
         for name, obj in checkpoint_dict.items():
             if torch.is_tensor(obj):
@@ -272,7 +298,7 @@ class Checkpoint:
         is_sync=False,
     ):
 
-        os.sched_setaffinity(0, {1})
+        os.sched_setaffinity(0, {1, 2, 3, 4})
 
         # GOAL: same mem footprint as GPM/CheckFreq
         print(f"total_size: {self.total_size}, bsize: {self.bsize}, ratio: {self.ratio}")

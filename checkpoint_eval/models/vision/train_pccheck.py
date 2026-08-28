@@ -19,7 +19,7 @@ import argparse
 
 import ctypes
 from checkpoint_eval.pccheck.chk_monitor import Chk_monitor
-from checkpoint_eval.pccheck_utils import initialize, get_total_size, set_storage
+from checkpoint_eval.pccheck_utils import initialize, get_total_size, set_storage, initialize_updated, get_total_size_updated, set_storage_updated
 
 # preprocessing sources:
 # https://github.com/pytorch/examples/blob/main/imagenet/main.py
@@ -83,11 +83,13 @@ def train():
 
     # for checkpoint
     mp.set_start_method("spawn", force=True)
-    gpu_ar, total_size = initialize(model, [optimizer])
+    gpu_ar, total_size = initialize_updated(model, [optimizer])
+
+    print(f"---------- TOTAL_SIZE IS {total_size} -----------")
 
     start_idx = 0
     # assume gpu_ar is big 1D GPU tensor
-    set_storage(model, [optimizer], gpu_ar)
+    set_storage_updated(model, [optimizer], gpu_ar)
     torch.cuda.empty_cache()
     if args.cfreq > 0:
         chk_monitor = Chk_monitor(

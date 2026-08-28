@@ -2,11 +2,11 @@ import os
 
 home_dir = os.path.expanduser("~")
 iters = 200
-cfreqs = [10]
+cfreqs = [20]
 model = "vgg16"
 batchsize = 32
 
-max_async = 4
+max_async = 1
 num_threads = 2
 psize = 8
 

@@ -45,7 +45,11 @@ public:
     // put free address
     void put_add(float *add, size_t id)
     {
-        free_add.enqueue(add, 0);
+        // `id` is a hazard-pointer thread id; hardcoding 0 made every
+        // concurrent releaser share one hazard-pointer entry, defeating the
+        // protection that keeps a retired queue node from being deleted while
+        // another thread is still reading it.
+        free_add.enqueue(add, id);
     }
 
 private:

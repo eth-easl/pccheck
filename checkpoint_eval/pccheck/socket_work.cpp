@@ -56,7 +56,7 @@ void wait_to_receive(std::vector<int>& client_sockets, int N) {
 void send_and_wait(int* socket, int counter) {
     send(*socket, &counter, 4, 0);
     int* val = (int*)malloc(sizeof(int));
-    read(*socket, val, 4);
+    read(*socket, val, 4); // TODO: check value here
 }
 
 void close_rank0_socket(std::vector<int>& client_sockets, int* server_fd) {

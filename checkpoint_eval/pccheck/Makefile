@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-pthread -I/usr/local/cuda/include/ -L/usr/local/cuda/lib64/ -latomic -lpmem -lcudart -O3 -march=native -mtune=native -ffast-math
+CFLAGS=-pthread -I/usr/local/cuda/include/ -L/usr/local/cuda/lib64/ -latomic -lcudart -O3 -march=native -mtune=native -ffast-math
 
 main.o: main.cpp
 	$(CC) -c -fPIC main.cpp -o main.o
